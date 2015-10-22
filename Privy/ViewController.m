@@ -19,9 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    PFObject *post = [PFObject objectWithClassName:@"Post"];
+    post[@"filter"] = @"willow";
+    [post saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
