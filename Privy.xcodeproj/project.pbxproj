@@ -41,6 +41,11 @@
 		A07C0E761BD9884A00BBAED2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E751BD9884A00BBAED2 /* libsqlite3.tbd */; };
 		A07C0E781BD9886200BBAED2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E771BD9886200BBAED2 /* Accounts.framework */; };
 		A07C0E7A1BD9886A00BBAED2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E791BD9886A00BBAED2 /* Social.framework */; };
+		A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
+		A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690641BDB394A00657D3C /* SplashLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F690661BDB3E0A00657D3C /* Login.xcassets */; settings = {ASSET_TAGS = (); }; };
+		A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690691BDB49FD00657D3C /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +115,14 @@
 		A07C0E751BD9884A00BBAED2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A07C0E771BD9886200BBAED2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		A07C0E791BD9886A00BBAED2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login:SignUp.storyboard"; sourceTree = "<group>"; };
+		A0F690631BDB394A00657D3C /* SplashLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashLoginViewController.h; sourceTree = "<group>"; };
+		A0F690641BDB394A00657D3C /* SplashLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashLoginViewController.m; sourceTree = "<group>"; };
+		A0F690661BDB3E0A00657D3C /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
+		A0F690681BDB49FD00657D3C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A0F690691BDB49FD00657D3C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A0F6906B1BDB4A0300657D3C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +187,7 @@
 		43596CF71BDB12FF00E352B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */,
 				A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */,
 				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
 			);
@@ -191,6 +205,12 @@
 				43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */,
 				43596CFF1BDB148900E352B2 /* PostTableViewCell.h */,
 				43596D001BDB148900E352B2 /* PostTableViewCell.m */,
+				A0F690631BDB394A00657D3C /* SplashLoginViewController.h */,
+				A0F690641BDB394A00657D3C /* SplashLoginViewController.m */,
+				A0F690681BDB49FD00657D3C /* LoginViewController.h */,
+				A0F690691BDB49FD00657D3C /* LoginViewController.m */,
+				A0F6906B1BDB4A0300657D3C /* SignUpViewController.h */,
+				A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				A07C0E2D1BD9877F00BBAED2 /* Assets.xcassets */,
+				A0F690661BDB3E0A00657D3C /* Login.xcassets */,
 				A07C0E241BD9877F00BBAED2 /* AppDelegate.h */,
 				A07C0E251BD9877F00BBAED2 /* AppDelegate.m */,
 				A07C0E321BD9877F00BBAED2 /* Info.plist */,
@@ -387,8 +408,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C0E311BD9877F00BBAED2 /* LaunchScreen.storyboard in Resources */,
+				A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */,
 				A07C0E2E1BD9877F00BBAED2 /* Assets.xcassets in Resources */,
 				A07C0E2C1BD9877F00BBAED2 /* Main.storyboard in Resources */,
+				A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */,
 				43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */,
 				A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */,
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
@@ -420,8 +444,10 @@
 				A07C0E231BD9877F00BBAED2 /* main.m in Sources */,
 				435439531BD9D3BB00B1E70B /* Comment.m in Sources */,
 				435439561BD9D5B200B1E70B /* Like.m in Sources */,
+				A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
 				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
+				A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */,
 				43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

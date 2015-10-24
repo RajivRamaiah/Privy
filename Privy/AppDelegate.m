@@ -39,6 +39,22 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
+    if (![User currentUser]){
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login:SignUp" bundle:nil];
+        UIViewController *vc= [loginStoryboard instantiateViewControllerWithIdentifier:@"initial"];
+        [self.window setRootViewController:vc];
+        [self.window makeKeyAndVisible];
+    }
+    else if([User currentUser]){
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc= [loginStoryboard instantiateViewControllerWithIdentifier:@"main"];
+        [self.window setRootViewController:vc];
+        [self.window makeKeyAndVisible];
+
+    }
+
     return YES;
 }
 
