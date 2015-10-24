@@ -7,6 +7,11 @@
 //
 
 #import "PostHeaderTableViewCell.h"
+#import <Parse/Parse.h>
+#import "User.h"
+#import "Post.h"
+#import "Like.h"
+#import "Comment.h"
 
 @implementation PostHeaderTableViewCell
 

@@ -14,6 +14,8 @@
 		43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596CFA1BDB133600E352B2 /* HomeViewController.m */; };
 		43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */; };
 		43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596D001BDB148900E352B2 /* PostTableViewCell.m */; };
+		436D2E101BDC2D650077EFA6 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */; };
+		436D2E121BDC2E5E0077EFA6 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */; };
 		A07C0E231BD9877F00BBAED2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E221BD9877F00BBAED2 /* main.m */; };
 		A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E251BD9877F00BBAED2 /* AppDelegate.m */; };
 		A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E281BD9877F00BBAED2 /* ViewController.m */; };
@@ -75,6 +77,8 @@
 		43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostHeaderTableViewCell.m; sourceTree = "<group>"; };
 		43596CFF1BDB148900E352B2 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		43596D001BDB148900E352B2 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		436D2E0F1BDC2D650077EFA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
+		436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		A07C0E1E1BD9877F00BBAED2 /* Privy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07C0E221BD9877F00BBAED2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A07C0E241BD9877F00BBAED2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */,
+				436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */,
+				436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */,
 				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -387,6 +393,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C0E311BD9877F00BBAED2 /* LaunchScreen.storyboard in Resources */,
+				436D2E101BDC2D650077EFA6 /* Camera.storyboard in Resources */,
+				436D2E121BDC2E5E0077EFA6 /* Activity.storyboard in Resources */,
 				A07C0E2E1BD9877F00BBAED2 /* Assets.xcassets in Resources */,
 				A07C0E2C1BD9877F00BBAED2 /* Main.storyboard in Resources */,
 			);
@@ -458,6 +466,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				436D2E0F1BDC2D650077EFA6 /* Base */,
+			);
+			name = Camera.storyboard;
+			sourceTree = "<group>";
+		};
 		A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

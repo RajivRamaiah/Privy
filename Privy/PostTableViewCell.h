@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface PostTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet PFImageView *postImageView;
 
 @end

@@ -14,7 +14,7 @@
 
 @interface Post : PFObject <PFSubclassing>
 
-@property (nonatomic) User *user;
+@property (nonatomic) User *createdBy;
 @property (nonatomic) PFFile *image;
 @property (nonatomic) PFGeoPoint *location;
 @property (nonatomic) PFRelation *likesRelation;

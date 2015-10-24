@@ -13,7 +13,7 @@
 
 @implementation Post
 
-@dynamic user;
+@dynamic createdBy;
 @dynamic image;
 @dynamic location;
 @dynamic likesRelation;
