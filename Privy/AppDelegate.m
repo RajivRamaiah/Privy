@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "User.h"
+#import "Post.h"
+#import "Like.h"
+#import "Comment.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +26,11 @@
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
+
+    [User registerSubclass];
+    [Post registerSubclass];
+    [Like registerSubclass];
+    [Comment registerSubclass];
 
     // Initialize Parse.
     [Parse setApplicationId:@"oiIXMAhYdgA8i47pSxxAGT3so2YE8VsLwSyg77uK"

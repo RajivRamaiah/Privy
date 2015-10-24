@@ -8,8 +8,8 @@
 
 #import <Parse/Parse.h>
 #import "Comment.h"
-#import "Like.h"
 
+@class Like;
 @class User;
 
 @interface Post : PFObject <PFSubclassing>
@@ -17,7 +17,8 @@
 @property (nonatomic) User *user;
 @property (nonatomic) PFFile *image;
 @property (nonatomic) PFGeoPoint *location;
-@property (nonatomic) Comment *comment;
+@property (nonatomic) PFRelation *likesRelation;
+@property (nonatomic) PFRelation *commentsRelation;
 @property (nonatomic) NSString *filter;
 @property (nonatomic) NSString *caption;
 //@property (nonatomic) PFRelation *likes;

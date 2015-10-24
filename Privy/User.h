@@ -7,7 +7,8 @@
 //
 
 #import <Parse/Parse.h>
-#import "Post.h"
+
+@class Post;
 
 @interface User : PFUser <PFSubclassing>
 
@@ -16,7 +17,8 @@
 @property (nonatomic) PFFile *coverPhoto;
 @property (nonatomic) NSString *bio;
 @property (nonatomic) NSString *gender;
-@property (nonatomic) PFRelation *likes;
-@property (nonatomic) PFRelation *posts;
+@property (nonatomic) PFRelation *likesRelation;
+@property (nonatomic) PFRelation *postsRelation;
+@property (nonatomic) PFRelation *friendsRelation;
 
 @end

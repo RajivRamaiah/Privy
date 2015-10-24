@@ -9,13 +9,15 @@
 #import "Post.h"
 #import <Parse/PFObject+Subclass.h>
 #import "User.h"
+#import "Like.h"
 
 @implementation Post
 
 @dynamic user;
 @dynamic image;
 @dynamic location;
-@dynamic comment;
+@dynamic likesRelation;
+@dynamic commentsRelation;
 @dynamic filter;
 @dynamic caption;
 

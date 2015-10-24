@@ -9,10 +9,12 @@
 #import <Parse/Parse.h>
 
 @class User;
+@class Post;
 
 @interface Like : PFObject <PFSubclassing>
 
 @property (nonatomic) User *user;
+@property (nonatomic) Post *post;
 
 + (NSString *)parseClassName;
 

@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import <Parse/PFObject+Subclass.h>
+#import "Post.h"
 
 @implementation User
 
@@ -16,20 +17,9 @@
 @dynamic coverPhoto;
 @dynamic bio;
 @dynamic gender;
-@dynamic posts;
-@dynamic likes;
-
-//@synthesize likes = _likes;
-//
-//- (void)setLikes:(PFRelation *)likes {
-//    _likes = likes;
-//}
-//
-//- (PFRelation *)likes {
-//    if (_likes == nil) {
-//        <#statements#>
-//    }
-//}
+@dynamic postsRelation;
+@dynamic likesRelation;
+@dynamic friendsRelation;
 
 + (void)load {
     [self registerSubclass];

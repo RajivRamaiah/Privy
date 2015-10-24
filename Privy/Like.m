@@ -9,10 +9,12 @@
 #import "Like.h"
 #import <Parse/PFObject+Subclass.h>
 #import "User.h"
+#import "Post.h"
 
 @implementation Like
 
 @dynamic user;
+@dynamic post;
 
 + (void)load {
     [self registerSubclass];

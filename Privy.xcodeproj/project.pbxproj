@@ -11,6 +11,9 @@
 		435439531BD9D3BB00B1E70B /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439521BD9D3BB00B1E70B /* Comment.m */; };
 		435439561BD9D5B200B1E70B /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439551BD9D5B200B1E70B /* Like.m */; };
 		435439591BD9D8BA00B1E70B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439581BD9D8BA00B1E70B /* User.m */; };
+		43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596CFA1BDB133600E352B2 /* HomeViewController.m */; };
+		43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */; };
+		43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596D001BDB148900E352B2 /* PostTableViewCell.m */; };
 		A07C0E231BD9877F00BBAED2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E221BD9877F00BBAED2 /* main.m */; };
 		A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E251BD9877F00BBAED2 /* AppDelegate.m */; };
 		A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E281BD9877F00BBAED2 /* ViewController.m */; };
@@ -66,6 +69,12 @@
 		435439551BD9D5B200B1E70B /* Like.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Like.m; sourceTree = "<group>"; };
 		435439571BD9D8BA00B1E70B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		435439581BD9D8BA00B1E70B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		43596CF91BDB133600E352B2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		43596CFA1BDB133600E352B2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		43596CFC1BDB13F800E352B2 /* PostHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostHeaderTableViewCell.h; sourceTree = "<group>"; };
+		43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostHeaderTableViewCell.m; sourceTree = "<group>"; };
+		43596CFF1BDB148900E352B2 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		43596D001BDB148900E352B2 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		A07C0E1E1BD9877F00BBAED2 /* Privy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07C0E221BD9877F00BBAED2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A07C0E241BD9877F00BBAED2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,7 +156,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		435439501BD9D15000B1E70B /* Model */ = {
+		43596CF61BDB12EA00E352B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				435439571BD9D8BA00B1E70B /* User.h */,
@@ -160,6 +169,30 @@
 				435439521BD9D3BB00B1E70B /* Comment.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		43596CF71BDB12FF00E352B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */,
+				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		43596CF81BDB130700E352B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A07C0E271BD9877F00BBAED2 /* ViewController.h */,
+				A07C0E281BD9877F00BBAED2 /* ViewController.m */,
+				43596CF91BDB133600E352B2 /* HomeViewController.h */,
+				43596CFA1BDB133600E352B2 /* HomeViewController.m */,
+				43596CFC1BDB13F800E352B2 /* PostHeaderTableViewCell.h */,
+				43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */,
+				43596CFF1BDB148900E352B2 /* PostTableViewCell.h */,
+				43596D001BDB148900E352B2 /* PostTableViewCell.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		A07C0E151BD9877F00BBAED2 = {
@@ -186,15 +219,9 @@
 		A07C0E201BD9877F00BBAED2 /* Privy */ = {
 			isa = PBXGroup;
 			children = (
-				A07C0E241BD9877F00BBAED2 /* AppDelegate.h */,
-				A07C0E251BD9877F00BBAED2 /* AppDelegate.m */,
-				A07C0E271BD9877F00BBAED2 /* ViewController.h */,
-				A07C0E281BD9877F00BBAED2 /* ViewController.m */,
-				435439501BD9D15000B1E70B /* Model */,
-				A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */,
-				A07C0E2D1BD9877F00BBAED2 /* Assets.xcassets */,
-				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
-				A07C0E321BD9877F00BBAED2 /* Info.plist */,
+				43596CF81BDB130700E352B2 /* Controller */,
+				43596CF71BDB12FF00E352B2 /* View */,
+				43596CF61BDB12EA00E352B2 /* Model */,
 				A07C0E211BD9877F00BBAED2 /* Supporting Files */,
 			);
 			path = Privy;
@@ -203,6 +230,10 @@
 		A07C0E211BD9877F00BBAED2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A07C0E2D1BD9877F00BBAED2 /* Assets.xcassets */,
+				A07C0E241BD9877F00BBAED2 /* AppDelegate.h */,
+				A07C0E251BD9877F00BBAED2 /* AppDelegate.m */,
+				A07C0E321BD9877F00BBAED2 /* Info.plist */,
 				A07C0E221BD9877F00BBAED2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -382,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */,
 				A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */,
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
 				A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */,
@@ -389,6 +421,8 @@
 				435439531BD9D3BB00B1E70B /* Comment.m in Sources */,
 				435439561BD9D5B200B1E70B /* Like.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
+				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
+				43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
