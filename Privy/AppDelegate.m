@@ -32,6 +32,7 @@
     [Post registerSubclass];
     [Like registerSubclass];
     [Comment registerSubclass];
+    [PFImageView class];
 
     // Initialize Parse.
     [Parse setApplicationId:@"oiIXMAhYdgA8i47pSxxAGT3so2YE8VsLwSyg77uK"
@@ -53,6 +54,7 @@
         UIViewController *vc= [loginStoryboard instantiateViewControllerWithIdentifier:@"main"];
         [self.window setRootViewController:vc];
         [self.window makeKeyAndVisible];
+        
 
     }
 

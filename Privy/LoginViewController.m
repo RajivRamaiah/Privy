@@ -11,7 +11,7 @@
 #import "User.h"
 #import "AppDelegate.h"
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property AppDelegate *delegate;
@@ -34,6 +34,8 @@
 }
 
 - (IBAction)onLoginButtonPressed:(UIButton *)sender {
+
+
 
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
@@ -63,6 +65,10 @@
         }];
     }
 
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    [textField resignFirstResponder];
 }
 
 

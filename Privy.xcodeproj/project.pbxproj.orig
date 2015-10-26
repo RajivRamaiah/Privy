@@ -43,17 +43,11 @@
 		A07C0E761BD9884A00BBAED2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E751BD9884A00BBAED2 /* libsqlite3.tbd */; };
 		A07C0E781BD9886200BBAED2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E771BD9886200BBAED2 /* Accounts.framework */; };
 		A07C0E7A1BD9886A00BBAED2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E791BD9886A00BBAED2 /* Social.framework */; };
-		A08A14EE1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A14ED1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m */; };
-		A08A14F11BDD9D3E0099FA43 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08A14EF1BDD9D3E0099FA43 /* Search.storyboard */; };
-		A08A14F41BDDA2110099FA43 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A14F31BDDA2110099FA43 /* SearchViewController.m */; };
-		A08A14F71BDDA2530099FA43 /* SearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A14F61BDDA2530099FA43 /* SearchProfileViewController.m */; };
-		A0C09D311BDC482B00F6630F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C09D301BDC482B00F6630F /* AVFoundation.framework */; };
-		A0C09D341BDC89E300F6630F /* CameraRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C09D331BDC89E300F6630F /* CameraRootViewController.m */; };
-		A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */; };
-		A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690641BDB394A00657D3C /* SplashLoginViewController.m */; };
-		A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F690661BDB3E0A00657D3C /* Login.xcassets */; };
-		A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690691BDB49FD00657D3C /* LoginViewController.m */; };
-		A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */; };
+		A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
+		A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690641BDB394A00657D3C /* SplashLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F690661BDB3E0A00657D3C /* Login.xcassets */; settings = {ASSET_TAGS = (); }; };
+		A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690691BDB49FD00657D3C /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,16 +119,6 @@
 		A07C0E751BD9884A00BBAED2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A07C0E771BD9886200BBAED2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		A07C0E791BD9886A00BBAED2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		A08A14EC1BDD963B0099FA43 /* SearchProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchProfileCollectionViewCell.h; sourceTree = "<group>"; };
-		A08A14ED1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchProfileCollectionViewCell.m; sourceTree = "<group>"; };
-		A08A14F01BDD9D3E0099FA43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
-		A08A14F21BDDA2110099FA43 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		A08A14F31BDDA2110099FA43 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 3; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		A08A14F51BDDA2530099FA43 /* SearchProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchProfileViewController.h; sourceTree = "<group>"; };
-		A08A14F61BDDA2530099FA43 /* SearchProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchProfileViewController.m; sourceTree = "<group>"; };
-		A0C09D301BDC482B00F6630F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A0C09D321BDC89E300F6630F /* CameraRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraRootViewController.h; sourceTree = "<group>"; };
-		A0C09D331BDC89E300F6630F /* CameraRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraRootViewController.m; sourceTree = "<group>"; };
 		A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login:SignUp.storyboard"; sourceTree = "<group>"; };
 		A0F690631BDB394A00657D3C /* SplashLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashLoginViewController.h; sourceTree = "<group>"; };
 		A0F690641BDB394A00657D3C /* SplashLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashLoginViewController.m; sourceTree = "<group>"; };
@@ -150,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0C09D311BDC482B00F6630F /* AVFoundation.framework in Frameworks */,
 				A07C0E7A1BD9886A00BBAED2 /* Social.framework in Frameworks */,
 				A07C0E781BD9886200BBAED2 /* Accounts.framework in Frameworks */,
 				A07C0E761BD9884A00BBAED2 /* libsqlite3.tbd in Frameworks */,
@@ -193,8 +176,6 @@
 		43596CF61BDB12EA00E352B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A08A14EC1BDD963B0099FA43 /* SearchProfileCollectionViewCell.h */,
-				A08A14ED1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m */,
 				435439571BD9D8BA00B1E70B /* User.h */,
 				435439581BD9D8BA00B1E70B /* User.m */,
 				4354394D1BD9D14B00B1E70B /* Post.h */,
@@ -215,7 +196,6 @@
 				436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */,
 				436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */,
 				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
-				A08A14EF1BDD9D3E0099FA43 /* Search.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -237,12 +217,6 @@
 				A0F690691BDB49FD00657D3C /* LoginViewController.m */,
 				A0F6906B1BDB4A0300657D3C /* SignUpViewController.h */,
 				A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */,
-				A0C09D321BDC89E300F6630F /* CameraRootViewController.h */,
-				A0C09D331BDC89E300F6630F /* CameraRootViewController.m */,
-				A08A14F21BDDA2110099FA43 /* SearchViewController.h */,
-				A08A14F31BDDA2110099FA43 /* SearchViewController.m */,
-				A08A14F51BDDA2530099FA43 /* SearchProfileViewController.h */,
-				A08A14F61BDDA2530099FA43 /* SearchProfileViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -313,7 +287,6 @@
 		A07C0E621BD987AA00BBAED2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0C09D301BDC482B00F6630F /* AVFoundation.framework */,
 				A07C0E751BD9884A00BBAED2 /* libsqlite3.tbd */,
 				A07C0E731BD9883700BBAED2 /* libz.tbd */,
 				A07C0E791BD9886A00BBAED2 /* Social.framework */,
@@ -441,12 +414,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C0E311BD9877F00BBAED2 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
 				436D2E101BDC2D650077EFA6 /* Camera.storyboard in Resources */,
 				436D2E121BDC2E5E0077EFA6 /* Activity.storyboard in Resources */,
+=======
 				A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */,
+>>>>>>> testrajiv
 				A07C0E2E1BD9877F00BBAED2 /* Assets.xcassets in Resources */,
 				A07C0E2C1BD9877F00BBAED2 /* Main.storyboard in Resources */,
-				A08A14F11BDD9D3E0099FA43 /* Search.storyboard in Resources */,
 				A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,15 +452,11 @@
 				A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */,
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
 				A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */,
-				A0C09D341BDC89E300F6630F /* CameraRootViewController.m in Sources */,
-				A08A14F41BDDA2110099FA43 /* SearchViewController.m in Sources */,
 				A07C0E231BD9877F00BBAED2 /* main.m in Sources */,
 				435439531BD9D3BB00B1E70B /* Comment.m in Sources */,
-				A08A14F71BDDA2530099FA43 /* SearchProfileViewController.m in Sources */,
 				435439561BD9D5B200B1E70B /* Like.m in Sources */,
 				A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
-				A08A14EE1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m in Sources */,
 				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
 				A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */,
 				43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */,
@@ -546,14 +517,6 @@
 				A07C0E301BD9877F00BBAED2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A08A14EF1BDD9D3E0099FA43 /* Search.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A08A14F01BDD9D3E0099FA43 /* Base */,
-			);
-			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
