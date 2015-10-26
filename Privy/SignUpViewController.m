@@ -70,6 +70,8 @@
             }
         }];
     }
+
+    [self.view endEditing:YES];
 }
 
 /*

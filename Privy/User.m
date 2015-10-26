@@ -20,6 +20,8 @@
 @dynamic postsRelation;
 @dynamic likesRelation;
 @dynamic friendsRelation;
+@dynamic numberOfFriends;
+@dynamic numberOfPosts;
 
 + (void)load {
     [self registerSubclass];

@@ -53,7 +53,6 @@
         UIViewController *vc= [loginStoryboard instantiateViewControllerWithIdentifier:@"main"];
         [self.window setRootViewController:vc];
         [self.window makeKeyAndVisible];
-
     }
 
     return YES;
