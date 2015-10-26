@@ -14,6 +14,9 @@
 @implementation Post
 
 @dynamic createdBy;
+@dynamic username;
+@dynamic numberOfLikes;
+@dynamic numberOfComments;
 @dynamic image;
 @dynamic location;
 @dynamic likesRelation;

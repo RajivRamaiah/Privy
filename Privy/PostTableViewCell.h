@@ -10,8 +10,26 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
+@class User;
+@class Post;
+@class PostTableViewCell;
+
+@protocol PostTableViewCellDelegate <NSObject>
+
+- (void)didTapLikeButton:(UIButton *)sender onCell:(PostTableViewCell *)cell;
+- (void)didTapCommentButton:(UIButton *)sender onCell:(PostTableViewCell *)cell;
+
+@end
+
 @interface PostTableViewCell : UITableViewCell
 
+@property (nonatomic, assign) id <PostTableViewCellDelegate> delegate;
+@property (nonatomic) User *currentUser;
+@property (nonatomic) Post *post;
 @property (weak, nonatomic) IBOutlet PFImageView *postImageView;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet UILabel *likesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
 @end

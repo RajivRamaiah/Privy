@@ -15,11 +15,13 @@
 #import "PostTableViewCell.h"
 #import "PostHeaderTableViewCell.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, PostTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) User *currentUser;
 @property (nonatomic) NSArray *posts;
+@property (nonatomic) NSMutableArray *likedPosts;
+
 
 @end
 
@@ -28,53 +30,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    User *user = [User user];
-//    user.username = @"John Smith"";
-//    user.password = @"password";
-//    user.email = @"johnsmith@company.com";
-//    user.bio = @"Hello world. I'm John."
-//
-//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error) {   // Hooray! Let them use the app now.
-//        } else {   NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
-//        }
-//    }]
-
-//    self.currentUser = [User currentUser];
-
-//    Post *post = [Post object];
-//    post.createdBy = self.currentUser;
-//    post.caption = @"Hi. I'm yet another caption";
-//
-//    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"nyc-skyline"]);
-//    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-//    post.image = imageFile;
-//    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-//        if (succeeded) {
-//            NSLog(@"yay");
-//        }
-//    }];
-
-    NSLog(@"%@", self.currentUser);
+    self.currentUser = [User currentUser];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-//    [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
 
             self.posts = objects;
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-
-            }
             [self.tableView reloadData];
+
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
+    }];
+
+    PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
+    PFQuery *likeQuery = [relation query];
+    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.likedPosts = [objects mutableCopy];
+        [self.tableView reloadData];
     }];
 
     [PFImageView new];
@@ -102,8 +78,20 @@
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.posts[indexPath.section];
 
+    for (Post *p in self.likedPosts) {
+        if (p.objectId == post.objectId) {
+            [cell.likeButton setSelected:YES];
+        } else {
+            [cell.likeButton setSelected:NO];
+        }
+    }
+
+    cell.post = post;
     cell.postImageView.file = post.image;
     [cell.postImageView loadInBackground];
+    cell.likesLabel.text = [NSString stringWithFormat:@"%@ Likes", [post.numberOfLikes stringValue]];
+    cell.captionLabel.text = post.caption;
+
 
     return cell;
 
@@ -113,7 +101,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostHeaderCell"];
     Post *post = self.posts[section];
 
-    cell.textLabel.text = post.caption;
+    cell.textLabel.text = post.username;
 
     return cell;
 }
@@ -121,6 +109,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     CGFloat f = 50.0;
     return f;
+}
+
+#pragma mark - PostTableViewCell Delegate Methods
+
+- (void)didTapLikeButton:(UIButton *)sender onCell:(PostTableViewCell *)cell {
+
+    if ([self.likedPosts containsObject:cell.post]) {
+        [self.likedPosts removeObject:cell.post];
+    } else {
+        [self.likedPosts addObject:cell.post];
+    }
+}
+
+- (void)didTapCommentButton:(UIButton *)sender onCell:(PostTableViewCell *)cell {
+    // something
 }
 
 /*

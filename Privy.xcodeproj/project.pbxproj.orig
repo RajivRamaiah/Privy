@@ -47,12 +47,15 @@
 		A07C0E761BD9884A00BBAED2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E751BD9884A00BBAED2 /* libsqlite3.tbd */; };
 		A07C0E781BD9886200BBAED2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E771BD9886200BBAED2 /* Accounts.framework */; };
 		A07C0E7A1BD9886A00BBAED2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C0E791BD9886A00BBAED2 /* Social.framework */; };
+<<<<<<< HEAD
+=======
 		A08A14EE1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A14ED1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m */; };
 		A08A14F11BDD9D3E0099FA43 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08A14EF1BDD9D3E0099FA43 /* Search.storyboard */; };
 		A08A14F41BDDA2110099FA43 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A14F31BDDA2110099FA43 /* SearchViewController.m */; };
 		A08A14F71BDDA2530099FA43 /* SearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A14F61BDDA2530099FA43 /* SearchProfileViewController.m */; };
 		A0C09D311BDC482B00F6630F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C09D301BDC482B00F6630F /* AVFoundation.framework */; };
 		A0C09D341BDC89E300F6630F /* CameraRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C09D331BDC89E300F6630F /* CameraRootViewController.m */; };
+>>>>>>> testrajiv
 		A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */; };
 		A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690641BDB394A00657D3C /* SplashLoginViewController.m */; };
 		A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F690661BDB3E0A00657D3C /* Login.xcassets */; };
@@ -531,8 +534,11 @@
 				435439561BD9D5B200B1E70B /* Like.m in Sources */,
 				A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
+<<<<<<< HEAD
 				436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */,
+=======
 				A08A14EE1BDD963B0099FA43 /* SearchProfileCollectionViewCell.m in Sources */,
+>>>>>>> testrajiv
 				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
 				A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */,
 				436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */,
