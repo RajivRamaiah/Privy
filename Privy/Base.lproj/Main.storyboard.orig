@@ -215,7 +215,7 @@
                         <segue destination="OJN-Ja-Fih" kind="relationship" relationship="viewControllers" id="ZAR-KH-GVh"/>
                         <segue destination="pBh-jN-Zxw" kind="relationship" relationship="viewControllers" id="Uwc-4z-aXD"/>
                         <segue destination="ufJ-xI-PjM" kind="relationship" relationship="viewControllers" id="wSl-6T-0vZ"/>
-                        <segue destination="WiH-7R-ZlN" kind="relationship" relationship="viewControllers" id="rKf-KI-hh8"/>
+                        <segue destination="Hma-LV-J1d" kind="relationship" relationship="viewControllers" id="eRO-vD-Ngd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcK-K3-wid" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +286,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="8aQ-W4-kAx"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xix-f4-JVi">
@@ -306,7 +306,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="aXN-Kd-SLA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -367,6 +367,7 @@
                                                         </label>
                                                     </subviews>
                                                     <animations/>
+<<<<<<< HEAD
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="Myx-qf-bbE" firstAttribute="leading" secondItem="p8Z-Zt-YCl" secondAttribute="trailing" constant="12" id="6FJ-b6-y82"/>
@@ -404,6 +405,12 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+=======
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+>>>>>>> testrajiv
                                             </subviews>
                                             <animations/>
                                             <constraints>
@@ -712,16 +719,6 @@
             </objects>
             <point key="canvasLocation" x="495.5" y="2160"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="3bV-E7-MBr">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="WiH-7R-ZlN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aSx-zZ-1c2"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gIP-Be-ISX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="793.5" y="2181"/>
-        </scene>
         <!--Activity-->
         <scene sceneID="kNb-fv-w4X">
             <objects>
@@ -732,6 +729,7 @@
             </objects>
             <point key="canvasLocation" x="-40.5" y="2160"/>
         </scene>
+<<<<<<< HEAD
         <!--Navigation Controller-->
         <scene sceneID="Udy-S4-ZeY">
             <objects>
@@ -753,6 +751,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyp-CE-O7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3619" y="1667"/>
+=======
+        <!--Search-->
+        <scene sceneID="0A6-Zc-Otq">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="discover" storyboardName="Search" referencedIdentifier="Search" id="Hma-LV-J1d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CMd-Ag-etl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7r6-IF-Pf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="2160"/>
+>>>>>>> testrajiv
         </scene>
     </scenes>
     <resources>
