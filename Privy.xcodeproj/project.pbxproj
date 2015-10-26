@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FE64E871BDC597D009DEDEC /* johnnyblessed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FE64E861BDC597D009DEDEC /* johnnyblessed.jpg */; };
-		2FE64E891BDC5982009DEDEC /* rajiv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FE64E881BDC5982009DEDEC /* rajiv.jpg */; };
 		2FE64E8F1BDC612A009DEDEC /* PostActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64E8E1BDC612A009DEDEC /* PostActivityTableViewCell.m */; };
 		2FE64E921BDC9092009DEDEC /* ActivityPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64E911BDC9092009DEDEC /* ActivityPageViewController.m */; };
 		2FE64E951BDCA0F5009DEDEC /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64E941BDCA0F5009DEDEC /* Activity.m */; };
-		2FE64E971BDDE366009DEDEC /* followicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE64E961BDDE366009DEDEC /* followicon.png */; };
-		2FE64E991BDDE36D009DEDEC /* kellen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE64E981BDDE36D009DEDEC /* kellen.png */; };
 		4354394F1BD9D14B00B1E70B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4354394E1BD9D14B00B1E70B /* Post.m */; };
 		435439531BD9D3BB00B1E70B /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439521BD9D3BB00B1E70B /* Comment.m */; };
 		435439561BD9D5B200B1E70B /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439551BD9D5B200B1E70B /* Like.m */; };
@@ -75,16 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2FE64E861BDC597D009DEDEC /* johnnyblessed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = johnnyblessed.jpg; sourceTree = "<group>"; };
-		2FE64E881BDC5982009DEDEC /* rajiv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rajiv.jpg; sourceTree = "<group>"; };
 		2FE64E8D1BDC612A009DEDEC /* PostActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityTableViewCell.h; sourceTree = "<group>"; };
 		2FE64E8E1BDC612A009DEDEC /* PostActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityTableViewCell.m; sourceTree = "<group>"; };
 		2FE64E901BDC9092009DEDEC /* ActivityPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityPageViewController.h; sourceTree = "<group>"; };
 		2FE64E911BDC9092009DEDEC /* ActivityPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityPageViewController.m; sourceTree = "<group>"; };
 		2FE64E931BDCA0F5009DEDEC /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		2FE64E941BDCA0F5009DEDEC /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		2FE64E961BDDE366009DEDEC /* followicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = followicon.png; sourceTree = "<group>"; };
-		2FE64E981BDDE36D009DEDEC /* kellen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kellen.png; sourceTree = "<group>"; };
 		4354394D1BD9D14B00B1E70B /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		4354394E1BD9D14B00B1E70B /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		435439511BD9D3BB00B1E70B /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -280,10 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				A07C0E2D1BD9877F00BBAED2 /* Assets.xcassets */,
-				2FE64E961BDDE366009DEDEC /* followicon.png */,
-				2FE64E981BDDE36D009DEDEC /* kellen.png */,
-				2FE64E881BDC5982009DEDEC /* rajiv.jpg */,
-				2FE64E861BDC597D009DEDEC /* johnnyblessed.jpg */,
 				A0F690661BDB3E0A00657D3C /* Login.xcassets */,
 				A07C0E241BD9877F00BBAED2 /* AppDelegate.h */,
 				A07C0E251BD9877F00BBAED2 /* AppDelegate.m */,
@@ -440,15 +428,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FE64E871BDC597D009DEDEC /* johnnyblessed.jpg in Resources */,
-				2FE64E891BDC5982009DEDEC /* rajiv.jpg in Resources */,
 				A07C0E311BD9877F00BBAED2 /* LaunchScreen.storyboard in Resources */,
 				436D2E101BDC2D650077EFA6 /* Camera.storyboard in Resources */,
 				436D2E121BDC2E5E0077EFA6 /* Activity.storyboard in Resources */,
 				A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */,
-				2FE64E991BDDE36D009DEDEC /* kellen.png in Resources */,
 				A07C0E2E1BD9877F00BBAED2 /* Assets.xcassets in Resources */,
-				2FE64E971BDDE366009DEDEC /* followicon.png in Resources */,
 				A07C0E2C1BD9877F00BBAED2 /* Main.storyboard in Resources */,
 				A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */,
 			);
