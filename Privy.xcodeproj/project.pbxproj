@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FE64E8F1BDC612A009DEDEC /* PostActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64E8E1BDC612A009DEDEC /* PostActivityTableViewCell.m */; };
+		2FE64E921BDC9092009DEDEC /* ActivityPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64E911BDC9092009DEDEC /* ActivityPageViewController.m */; };
+		2FE64E951BDCA0F5009DEDEC /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64E941BDCA0F5009DEDEC /* Activity.m */; };
 		4354394F1BD9D14B00B1E70B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4354394E1BD9D14B00B1E70B /* Post.m */; };
 		435439531BD9D3BB00B1E70B /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439521BD9D3BB00B1E70B /* Comment.m */; };
 		435439561BD9D5B200B1E70B /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 435439551BD9D5B200B1E70B /* Like.m */; };
@@ -72,6 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FE64E8D1BDC612A009DEDEC /* PostActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityTableViewCell.h; sourceTree = "<group>"; };
+		2FE64E8E1BDC612A009DEDEC /* PostActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityTableViewCell.m; sourceTree = "<group>"; };
+		2FE64E901BDC9092009DEDEC /* ActivityPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityPageViewController.h; sourceTree = "<group>"; };
+		2FE64E911BDC9092009DEDEC /* ActivityPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityPageViewController.m; sourceTree = "<group>"; };
+		2FE64E931BDCA0F5009DEDEC /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		2FE64E941BDCA0F5009DEDEC /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		4354394D1BD9D14B00B1E70B /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		4354394E1BD9D14B00B1E70B /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		435439511BD9D3BB00B1E70B /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -192,6 +201,8 @@
 				435439581BD9D8BA00B1E70B /* User.m */,
 				4354394D1BD9D14B00B1E70B /* Post.h */,
 				4354394E1BD9D14B00B1E70B /* Post.m */,
+				2FE64E931BDCA0F5009DEDEC /* Activity.h */,
+				2FE64E941BDCA0F5009DEDEC /* Activity.m */,
 				435439541BD9D5B200B1E70B /* Like.h */,
 				435439551BD9D5B200B1E70B /* Like.m */,
 				435439511BD9D3BB00B1E70B /* Comment.h */,
@@ -235,6 +246,10 @@
 				A0F690691BDB49FD00657D3C /* LoginViewController.m */,
 				A0F6906B1BDB4A0300657D3C /* SignUpViewController.h */,
 				A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */,
+				2FE64E8D1BDC612A009DEDEC /* PostActivityTableViewCell.h */,
+				2FE64E8E1BDC612A009DEDEC /* PostActivityTableViewCell.m */,
+				2FE64E901BDC9092009DEDEC /* ActivityPageViewController.h */,
+				2FE64E911BDC9092009DEDEC /* ActivityPageViewController.m */,
 			);
 			name = LogInSignUp;
 			sourceTree = "<group>";
@@ -488,7 +503,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE64E921BDC9092009DEDEC /* ActivityPageViewController.m in Sources */,
 				A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */,
+				2FE64E951BDCA0F5009DEDEC /* Activity.m in Sources */,
 				43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */,
 				A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */,
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
@@ -505,6 +522,7 @@
 				A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */,
 				436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */,
 				43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */,
+				2FE64E8F1BDC612A009DEDEC /* PostActivityTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

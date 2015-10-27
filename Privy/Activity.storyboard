@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iG6-Yn-hNm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Activity-->
         <scene sceneID="HQ1-Hs-jWk">
             <objects>
-                <viewController id="Gef-sQ-Wkg" sceneMemberID="viewController">
+                <viewController id="Gef-sQ-Wkg" customClass="ActivityPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OvR-cg-wXy"/>
                         <viewControllerLayoutGuide type="bottom" id="Osf-zf-D6I"/>
@@ -15,20 +16,92 @@
                     <view key="view" contentMode="scaleToFill" id="LeO-lY-kgu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-Mw-klS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="80" id="k6R-gr-Ge1" customClass="PostActivityTableViewCell">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k6R-gr-Ge1" id="r5u-fZ-ucz">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kellen.png" translatesAutoresizingMaskIntoConstraints="NO" id="32v-Sg-1EX" customClass="PFImageView">
+                                                    <rect key="frame" x="16" y="15" width="50" height="50"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="tID-jc-U2k"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="johnnyblessed liked your photo. 4m" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xlj-iG-Ieq">
+                                                    <rect key="frame" x="74" y="3" width="442" height="72"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyc-skyline" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-gM-RBU" customClass="PFImageView">
+                                                    <rect key="frame" x="531" y="17" width="50" height="50"/>
+                                                    <animations/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="9zz-bg-HG8"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Xlj-iG-Ieq" firstAttribute="leading" secondItem="32v-Sg-1EX" secondAttribute="trailing" constant="8" symbolic="YES" id="5OW-X5-bxc"/>
+                                                <constraint firstItem="Xlj-iG-Ieq" firstAttribute="centerY" secondItem="r5u-fZ-ucz" secondAttribute="centerY" id="9BU-F5-aNd"/>
+                                                <constraint firstItem="32v-Sg-1EX" firstAttribute="centerY" secondItem="r5u-fZ-ucz" secondAttribute="centerY" id="CyG-xO-AiW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CBh-gM-RBU" secondAttribute="trailing" constant="11" id="SWY-wH-SSa"/>
+                                                <constraint firstItem="32v-Sg-1EX" firstAttribute="top" secondItem="r5u-fZ-ucz" secondAttribute="topMargin" constant="7" id="Slh-rL-FjR"/>
+                                                <constraint firstItem="CBh-gM-RBU" firstAttribute="top" secondItem="r5u-fZ-ucz" secondAttribute="topMargin" constant="9" id="U6p-Gc-FIb"/>
+                                                <constraint firstItem="Xlj-iG-Ieq" firstAttribute="top" secondItem="r5u-fZ-ucz" secondAttribute="topMargin" constant="-5" id="a4C-Uk-SuA"/>
+                                                <constraint firstItem="CBh-gM-RBU" firstAttribute="centerY" secondItem="Xlj-iG-Ieq" secondAttribute="centerY" constant="3" id="h09-Z2-sUk"/>
+                                                <constraint firstItem="CBh-gM-RBU" firstAttribute="leading" secondItem="Xlj-iG-Ieq" secondAttribute="trailing" constant="15" id="itc-VX-wBs"/>
+                                                <constraint firstItem="32v-Sg-1EX" firstAttribute="leading" secondItem="r5u-fZ-ucz" secondAttribute="leadingMargin" constant="8" id="jUA-gf-Gxg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="activityFromUserImageView" destination="32v-Sg-1EX" id="Kyc-nc-Kdc"/>
+                                            <outlet property="activityFromUserLabel" destination="Xlj-iG-Ieq" id="Ahg-ev-j9a"/>
+                                            <outlet property="postImageView" destination="CBh-gM-RBU" id="aZR-tX-evd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gef-sQ-Wkg" id="mNy-st-w19"/>
+                                    <outlet property="delegate" destination="Gef-sQ-Wkg" id="5tZ-I3-oSK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="yG4-Mw-klS" secondAttribute="bottom" id="1Hy-FE-1Rw"/>
+                            <constraint firstItem="yG4-Mw-klS" firstAttribute="leading" secondItem="LeO-lY-kgu" secondAttribute="leading" id="48P-u5-jfX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yG4-Mw-klS" secondAttribute="trailing" constant="-20" id="4bl-H2-bzB"/>
+                            <constraint firstItem="yG4-Mw-klS" firstAttribute="top" secondItem="OvR-cg-wXy" secondAttribute="bottom" constant="-64" id="Iuz-w3-eWh"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="smi-aV-F5p"/>
+                    <navigationItem key="navigationItem" title="Activity" id="smi-aV-F5p"/>
+                    <connections>
+                        <outlet property="myTableView" destination="yG4-Mw-klS" id="X8K-nf-6Uc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwI-7q-Mlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="2516"/>
+            <point key="canvasLocation" x="698" y="2470"/>
         </scene>
-        <!--Item-->
+        <!--Activity-->
         <scene sceneID="AVN-J5-Kt0">
             <objects>
                 <navigationController storyboardIdentifier="Activity" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iG6-Yn-hNm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6yN-Ie-kmE"/>
+                    <tabBarItem key="tabBarItem" title="Activity" id="6yN-Ie-kmE"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UPy-m7-50n">
@@ -46,4 +119,8 @@
             <point key="canvasLocation" x="-104" y="2516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kellen.png" width="1242" height="1242"/>
+        <image name="nyc-skyline" width="300" height="240"/>
+    </resources>
 </document>
