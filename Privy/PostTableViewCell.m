@@ -26,6 +26,15 @@
 }
 
 - (IBAction)onLikeButtonPressed:(UIButton *)sender {
+
+    [UIView animateWithDuration:0.05f animations:^{
+        self.likeButton.transform = CGAffineTransformMakeScale(1.2,1.2);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.05f animations:^{
+            self.likeButton.transform = CGAffineTransformMakeScale(1.0,1.0);
+        }];
+    }];
+
     if (sender.isSelected == NO) {
         [sender setSelected:YES];
         PFRelation *like = [self.currentUser relationForKey:@"likesRelation"];

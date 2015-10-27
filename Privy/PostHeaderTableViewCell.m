@@ -20,6 +20,18 @@
     
 }
 
+- (void)loadCell {
+
+    if (!self.userProfilePhotoImageView.file) {
+        self.userProfilePhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+    } else {
+        self.userProfilePhotoImageView.file = self.user.profilePhoto;
+        [self.userProfilePhotoImageView loadInBackground];
+    }
+    self.usernameLabel.text = self.user.username;
+
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

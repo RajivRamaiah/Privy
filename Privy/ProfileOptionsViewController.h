@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ProfileViewController;
+
 @interface ProfileOptionsViewController : UIViewController
+
+@property ProfileViewController *pvc;
 
 @end

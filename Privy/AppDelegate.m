@@ -13,6 +13,7 @@
 #import "Post.h"
 #import "Like.h"
 #import "Comment.h"
+#import "Activity.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +33,7 @@
     [Post registerSubclass];
     [Like registerSubclass];
     [Comment registerSubclass];
+    [Activity registerSubclass];
 
     // Initialize Parse.
     [Parse setApplicationId:@"oiIXMAhYdgA8i47pSxxAGT3so2YE8VsLwSyg77uK"

@@ -14,15 +14,21 @@
 		43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596CFA1BDB133600E352B2 /* HomeViewController.m */; };
 		43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */; };
 		43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43596D001BDB148900E352B2 /* PostTableViewCell.m */; };
-		436D2E101BDC2D650077EFA6 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */; };
-		436D2E121BDC2E5E0077EFA6 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */; };
 		436D2E161BDC426E0077EFA6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E151BDC426E0077EFA6 /* ProfileViewController.m */; };
 		436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */; };
 		436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */; };
 		436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */; };
+		43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889521BDEFDA6004E1B6A /* ActivityViewController.m */; };
+		43D889581BDF0189004E1B6A /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889571BDF0189004E1B6A /* ActivityTableViewCell.m */; };
+		43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D8895A1BDF02F8004E1B6A /* Activity.m */; };
+		43D8895E1BDF1AC1004E1B6A /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D8895D1BDF1AC1004E1B6A /* SearchCollectionViewCell.m */; };
+		43D889611BDF1AD1004E1B6A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889601BDF1AD1004E1B6A /* SearchViewController.m */; };
+		43D889641BDF1D31004E1B6A /* SearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889631BDF1D31004E1B6A /* SearchProfileViewController.m */; };
+		43D889671BDF240C004E1B6A /* CameraRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889661BDF240C004E1B6A /* CameraRootViewController.m */; };
+		43D889691BDF2FED004E1B6A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D889681BDF2FED004E1B6A /* Search.storyboard */; };
+		43D8896C1BDF3018004E1B6A /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D8896A1BDF3018004E1B6A /* Activity.storyboard */; };
 		A07C0E231BD9877F00BBAED2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E221BD9877F00BBAED2 /* main.m */; };
 		A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E251BD9877F00BBAED2 /* AppDelegate.m */; };
-		A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07C0E281BD9877F00BBAED2 /* ViewController.m */; };
 		A07C0E2C1BD9877F00BBAED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */; };
 		A07C0E2E1BD9877F00BBAED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07C0E2D1BD9877F00BBAED2 /* Assets.xcassets */; };
 		A07C0E311BD9877F00BBAED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */; };
@@ -86,8 +92,6 @@
 		43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostHeaderTableViewCell.m; sourceTree = "<group>"; };
 		43596CFF1BDB148900E352B2 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		43596D001BDB148900E352B2 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
-		436D2E0F1BDC2D650077EFA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
-		436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		436D2E141BDC426E0077EFA6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		436D2E151BDC426E0077EFA6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		436D2E171BDC996D0077EFA6 /* ProfilePostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePostTableViewCell.h; sourceTree = "<group>"; };
@@ -96,12 +100,26 @@
 		436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileOptionsViewController.m; sourceTree = "<group>"; };
 		436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		43D889511BDEFDA6004E1B6A /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		43D889521BDEFDA6004E1B6A /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		43D889561BDF0189004E1B6A /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
+		43D889571BDF0189004E1B6A /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
+		43D889591BDF02F8004E1B6A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		43D8895A1BDF02F8004E1B6A /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		43D8895C1BDF1AC1004E1B6A /* SearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewCell.h; sourceTree = "<group>"; };
+		43D8895D1BDF1AC1004E1B6A /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
+		43D8895F1BDF1AD1004E1B6A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		43D889601BDF1AD1004E1B6A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		43D889621BDF1D31004E1B6A /* SearchProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchProfileViewController.h; sourceTree = "<group>"; };
+		43D889631BDF1D31004E1B6A /* SearchProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchProfileViewController.m; sourceTree = "<group>"; };
+		43D889651BDF240C004E1B6A /* CameraRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraRootViewController.h; sourceTree = "<group>"; };
+		43D889661BDF240C004E1B6A /* CameraRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraRootViewController.m; sourceTree = "<group>"; };
+		43D889681BDF2FED004E1B6A /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		43D8896B1BDF3018004E1B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		A07C0E1E1BD9877F00BBAED2 /* Privy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07C0E221BD9877F00BBAED2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A07C0E241BD9877F00BBAED2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A07C0E251BD9877F00BBAED2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A07C0E271BD9877F00BBAED2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A07C0E281BD9877F00BBAED2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A07C0E2B1BD9877F00BBAED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A07C0E2D1BD9877F00BBAED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A07C0E301BD9877F00BBAED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,6 +214,8 @@
 				435439551BD9D5B200B1E70B /* Like.m */,
 				435439511BD9D3BB00B1E70B /* Comment.h */,
 				435439521BD9D3BB00B1E70B /* Comment.m */,
+				43D889591BDF02F8004E1B6A /* Activity.h */,
+				43D8895A1BDF02F8004E1B6A /* Activity.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -205,25 +225,11 @@
 			children = (
 				A0F690611BDB2B2500657D3C /* Login:SignUp.storyboard */,
 				A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */,
-				436D2E111BDC2E5E0077EFA6 /* Activity.storyboard */,
-				436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */,
+				43D8896A1BDF3018004E1B6A /* Activity.storyboard */,
+				43D889681BDF2FED004E1B6A /* Search.storyboard */,
 				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		43596CF81BDB130700E352B2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				436D2E1E1BDCB60B0077EFA6 /* Profile */,
-				436D2E1D1BDCB5F10077EFA6 /* TableViewCells */,
-				436D2E131BDC3EB40077EFA6 /* LogInSignUp */,
-				A07C0E271BD9877F00BBAED2 /* ViewController.h */,
-				A07C0E281BD9877F00BBAED2 /* ViewController.m */,
-				43596CF91BDB133600E352B2 /* HomeViewController.h */,
-				43596CFA1BDB133600E352B2 /* HomeViewController.m */,
-			);
-			name = Controller;
 			sourceTree = "<group>";
 		};
 		436D2E131BDC3EB40077EFA6 /* LogInSignUp */ = {
@@ -239,9 +245,26 @@
 			name = LogInSignUp;
 			sourceTree = "<group>";
 		};
-		436D2E1D1BDCB5F10077EFA6 /* TableViewCells */ = {
+		436D2E1D1BDCB5F10077EFA6 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				43D889651BDF240C004E1B6A /* CameraRootViewController.h */,
+				43D889661BDF240C004E1B6A /* CameraRootViewController.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		436D2E1E1BDCB60B0077EFA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				43596CF91BDB133600E352B2 /* HomeViewController.h */,
+				43596CFA1BDB133600E352B2 /* HomeViewController.m */,
+				436D2E141BDC426E0077EFA6 /* ProfileViewController.h */,
+				436D2E151BDC426E0077EFA6 /* ProfileViewController.m */,
+				436D2E1A1BDCA3630077EFA6 /* ProfileOptionsViewController.h */,
+				436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */,
+				436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */,
+				436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */,
 				43596CFC1BDB13F800E352B2 /* PostHeaderTableViewCell.h */,
 				43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */,
 				43596CFF1BDB148900E352B2 /* PostTableViewCell.h */,
@@ -249,20 +272,31 @@
 				436D2E171BDC996D0077EFA6 /* ProfilePostTableViewCell.h */,
 				436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */,
 			);
-			name = TableViewCells;
+			name = Main;
 			sourceTree = "<group>";
 		};
-		436D2E1E1BDCB60B0077EFA6 /* Profile */ = {
+		43D889541BDEFDE2004E1B6A /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				436D2E141BDC426E0077EFA6 /* ProfileViewController.h */,
-				436D2E151BDC426E0077EFA6 /* ProfileViewController.m */,
-				436D2E1A1BDCA3630077EFA6 /* ProfileOptionsViewController.h */,
-				436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */,
-				436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */,
-				436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */,
+				43D889511BDEFDA6004E1B6A /* ActivityViewController.h */,
+				43D889521BDEFDA6004E1B6A /* ActivityViewController.m */,
+				43D889561BDF0189004E1B6A /* ActivityTableViewCell.h */,
+				43D889571BDF0189004E1B6A /* ActivityTableViewCell.m */,
 			);
-			name = Profile;
+			name = Activity;
+			sourceTree = "<group>";
+		};
+		43D889551BDEFDF0004E1B6A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				43D8895F1BDF1AD1004E1B6A /* SearchViewController.h */,
+				43D889601BDF1AD1004E1B6A /* SearchViewController.m */,
+				43D8895C1BDF1AC1004E1B6A /* SearchCollectionViewCell.h */,
+				43D8895D1BDF1AC1004E1B6A /* SearchCollectionViewCell.m */,
+				43D889621BDF1D31004E1B6A /* SearchProfileViewController.h */,
+				43D889631BDF1D31004E1B6A /* SearchProfileViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		A07C0E151BD9877F00BBAED2 = {
@@ -289,7 +323,11 @@
 		A07C0E201BD9877F00BBAED2 /* Privy */ = {
 			isa = PBXGroup;
 			children = (
-				43596CF81BDB130700E352B2 /* Controller */,
+				43D889551BDEFDF0004E1B6A /* Search */,
+				43D889541BDEFDE2004E1B6A /* Activity */,
+				436D2E1E1BDCB60B0077EFA6 /* Main */,
+				436D2E1D1BDCB5F10077EFA6 /* Camera */,
+				436D2E131BDC3EB40077EFA6 /* LogInSignUp */,
 				43596CF71BDB12FF00E352B2 /* View */,
 				43596CF61BDB12EA00E352B2 /* Model */,
 				A07C0E211BD9877F00BBAED2 /* Supporting Files */,
@@ -458,11 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C0E311BD9877F00BBAED2 /* LaunchScreen.storyboard in Resources */,
-				436D2E101BDC2D650077EFA6 /* Camera.storyboard in Resources */,
-				436D2E121BDC2E5E0077EFA6 /* Activity.storyboard in Resources */,
 				A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */,
 				A07C0E2E1BD9877F00BBAED2 /* Assets.xcassets in Resources */,
 				A07C0E2C1BD9877F00BBAED2 /* Main.storyboard in Resources */,
+				43D8896C1BDF3018004E1B6A /* Activity.storyboard in Resources */,
+				43D889691BDF2FED004E1B6A /* Search.storyboard in Resources */,
 				A0F690621BDB2B2500657D3C /* Login:SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,18 +528,24 @@
 			files = (
 				A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */,
 				43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */,
-				A07C0E291BD9877F00BBAED2 /* ViewController.m in Sources */,
+				43D8895E1BDF1AC1004E1B6A /* SearchCollectionViewCell.m in Sources */,
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
 				436D2E161BDC426E0077EFA6 /* ProfileViewController.m in Sources */,
 				A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */,
+				43D889671BDF240C004E1B6A /* CameraRootViewController.m in Sources */,
 				A07C0E231BD9877F00BBAED2 /* main.m in Sources */,
+				43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */,
 				436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */,
 				435439531BD9D3BB00B1E70B /* Comment.m in Sources */,
+				43D889641BDF1D31004E1B6A /* SearchProfileViewController.m in Sources */,
 				435439561BD9D5B200B1E70B /* Like.m in Sources */,
 				A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
+				43D889611BDF1AD1004E1B6A /* SearchViewController.m in Sources */,
+				43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */,
 				436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */,
 				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
+				43D889581BDF0189004E1B6A /* ActivityTableViewCell.m in Sources */,
 				A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */,
 				436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */,
 				43596D011BDB148900E352B2 /* PostTableViewCell.m in Sources */,
@@ -540,12 +584,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		436D2E0E1BDC2D650077EFA6 /* Camera.storyboard */ = {
+		43D8896A1BDF3018004E1B6A /* Activity.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				436D2E0F1BDC2D650077EFA6 /* Base */,
+				43D8896B1BDF3018004E1B6A /* Base */,
 			);
-			name = Camera.storyboard;
+			name = Activity.storyboard;
 			sourceTree = "<group>";
 		};
 		A07C0E2A1BD9877F00BBAED2 /* Main.storyboard */ = {

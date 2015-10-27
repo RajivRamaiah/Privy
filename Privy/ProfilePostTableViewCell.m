@@ -7,12 +7,26 @@
 //
 
 #import "ProfilePostTableViewCell.h"
+#import "User.h"
+#import "Post.h"
 
 @implementation ProfilePostTableViewCell
 
 - (void)awakeFromNib {
 
     self.userProfileImageView.layer.cornerRadius = 4;
+}
+
+- (void)loadCell {
+    self.usernameLabel.text = self.user.username;
+    self.userProfileImageView.file = self.user.profilePhoto;
+    [self.userProfileImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        self.userProfileImageView.image = image;
+    }];
+    self.postImageView.file = self.post.image;
+    [self.postImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        self.postImageView.image = image;
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

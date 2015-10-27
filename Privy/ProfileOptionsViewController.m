@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "ProfileOptionsViewController.h"
 #import "User.h"
+#import "EditProfileViewController.h"
 
 @interface ProfileOptionsViewController () <UITableViewDataSource, UITableViewDelegate>
 

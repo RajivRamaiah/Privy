@@ -21,6 +21,7 @@
 @property (nonatomic) User *currentUser;
 @property (nonatomic) NSArray *posts;
 @property (nonatomic) NSMutableArray *likedPosts;
+@property UIRefreshControl *refreshControl;
 
 
 @end
@@ -31,12 +32,13 @@
     [super viewDidLoad];
 
     self.currentUser = [User currentUser];
+    [self loadRefreshControl];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
+    [query includeKey:@"createdBy"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-
             self.posts = objects;
             [self.tableView reloadData];
 
@@ -46,12 +48,13 @@
         }
     }];
 
-    PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
-    PFQuery *likeQuery = [relation query];
-    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        self.likedPosts = [objects mutableCopy];
-        [self.tableView reloadData];
-    }];
+//    PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
+//    PFQuery *likeQuery = [relation query];
+//    [likeQuery includeKey:@"createdBy"];
+//    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        self.likedPosts = [objects mutableCopy];
+//        [self.tableView reloadData];
+//    }];
 
     [PFImageView new];
 }
@@ -60,6 +63,30 @@
     [super viewDidAppear:YES];
 
     [self.tableView reloadData];
+}
+
+- (void)loadRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor grayColor];
+    [self.refreshControl addTarget:self action:@selector(refreshControlAction) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    self.tableView.alwaysBounceVertical = YES;
+}
+
+- (void)refreshControlAction {
+    [self.refreshControl beginRefreshing];
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.posts = objects;
+            [self.tableView reloadData];
+
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    [self.refreshControl endRefreshing];
 }
 
 
@@ -78,13 +105,13 @@
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.posts[indexPath.section];
 
-    for (Post *p in self.likedPosts) {
-        if (p.objectId == post.objectId) {
-            [cell.likeButton setSelected:YES];
-        } else {
-            [cell.likeButton setSelected:NO];
-        }
-    }
+//    for (Post *p in self.likedPosts) {
+//        if (p.objectId == post.objectId) {
+//            [cell.likeButton setSelected:YES];
+//        } else {
+//            [cell.likeButton setSelected:NO];
+//        }
+//    }
 
     cell.post = post;
     cell.postImageView.file = post.image;
@@ -98,10 +125,15 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostHeaderCell"];
+    PostHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostHeaderCell"];
     Post *post = self.posts[section];
 
-    cell.textLabel.text = post.username;
+//    cell.user = post.createdBy;
+    cell.userProfilePhotoImageView.file = post.createdBy.profilePhoto;
+    [cell.userProfilePhotoImageView loadInBackground];
+    cell.usernameLabel.text = post.createdBy.username;
+#warning Completion handler needed to load profile images
+//    [cell loadCell];
 
     return cell;
 }

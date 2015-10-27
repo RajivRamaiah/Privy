@@ -11,6 +11,8 @@
 #import "ProfilePostTableViewCell.h"
 #import "User.h"
 #import "Post.h"
+#import "EditProfileViewController.h"
+#import "ProfileOptionsViewController.h"
 
 
 @interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -22,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profilePhotoImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *coverPhotoImageView;
 
 @end
 
@@ -34,16 +37,11 @@
 
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query whereKey:@"createdBy" equalTo:self.currentUser];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
             self.posts = objects;
-
-            NSLog(@"Successfully retrieved %lu posts.", (unsigned long)self.posts.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
             [self.tableView reloadData];
         } else {
             // Log details of the failure
@@ -60,9 +58,15 @@
     self.profilePhotoImageView.file = self.currentUser.profilePhoto;
 #warning Profile image won't update from Options screen if still uploading in background
     [self.profilePhotoImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.profilePhotoImageView setNeedsDisplay];
-        });
+        self.profilePhotoImageView.image = image;
+    }];
+    self.coverPhotoImageView.file = self.currentUser.coverPhoto;
+    [self.coverPhotoImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        if (!image) {
+            self.coverPhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+        } else {
+            self.coverPhotoImageView.image = image;
+        }
     }];
     self.fullnameLabel.text = self.currentUser.fullname;
     self.usernameLabel.text = self.currentUser.username;
@@ -79,10 +83,14 @@
     ProfilePostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.posts[indexPath.row];
 
-    cell.usernameLabel.text = post.username;
+    cell.user = self.currentUser;
+    cell.post = post;
+    [cell loadCell];
 
     return cell;
 }
+
+
 
 /*
 #pragma mark - Navigation

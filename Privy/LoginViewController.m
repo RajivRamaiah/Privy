@@ -38,6 +38,9 @@
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
 
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+
     if (username.length < 4 || password.length < 6){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Insufficient Username or Password length." message:@"Please make sure your username is over 4 characters and your password is over six characters!" preferredStyle:UIAlertControllerStyleAlert];
 

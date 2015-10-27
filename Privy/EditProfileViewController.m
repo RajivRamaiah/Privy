@@ -10,6 +10,7 @@
 #import <ParseUI/ParseUI.h>
 #import "EditProfileViewController.h"
 #import "User.h"
+#import "ProfileViewController.h"
 
 @interface EditProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -44,6 +45,9 @@
     }
 }
 
+//+ (void)updateUserImageWithBlock:(void (^)(UIImage *image))complete {
+//
+//}
 
 - (IBAction)onCancelButtonPressed:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -60,7 +64,9 @@
     self.currentUser.bio = self.bioTextField.text;
     self.currentUser.email = self.emailTextField.text;
     self.currentUser.gender = self.genderTextField.text;
-    [self.currentUser saveInBackground];
+    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        // TODO: Set needs display on profile view controller
+    }];
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
