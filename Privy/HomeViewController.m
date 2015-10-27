@@ -48,13 +48,12 @@
         }
     }];
 
-//    PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
-//    PFQuery *likeQuery = [relation query];
-//    [likeQuery includeKey:@"createdBy"];
-//    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        self.likedPosts = [objects mutableCopy];
-//        [self.tableView reloadData];
-//    }];
+    PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
+    PFQuery *likeQuery = [relation query];
+    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.likedPosts = [objects mutableCopy];
+        [self.tableView reloadData];
+    }];
 
     [PFImageView new];
 }
@@ -104,14 +103,13 @@
 
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.posts[indexPath.section];
+    cell.delegate = self;
 
-//    for (Post *p in self.likedPosts) {
-//        if (p.objectId == post.objectId) {
-//            [cell.likeButton setSelected:YES];
-//        } else {
-//            [cell.likeButton setSelected:NO];
-//        }
-//    }
+    if ([self.likedPosts containsObject:post]) {
+        cell.likeButton.selected = YES;
+    } else {
+        cell.likeButton.selected = NO;
+    }
 
     cell.post = post;
     cell.postImageView.file = post.image;

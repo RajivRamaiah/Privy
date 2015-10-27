@@ -17,6 +17,7 @@
 
 - (void)awakeFromNib {
     self.currentUser = [User currentUser];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -36,15 +37,15 @@
     }];
 
     if (sender.isSelected == NO) {
-        [sender setSelected:YES];
+        sender.selected = YES;
         PFRelation *like = [self.currentUser relationForKey:@"likesRelation"];
-        [like removeObject:self.post];
+        [like addObject:self.post];
         self.post.numberOfLikes = @(self.post.numberOfLikes.integerValue + 1);
         [self.likesLabel setNeedsDisplay];
     } else {
-        [sender setSelected:NO];
+        sender.selected = NO;
         PFRelation *like = [self.currentUser relationForKey:@"likesRelation"];
-        [like addObject:self.post];
+        [like removeObject:self.post];
         self.post.numberOfLikes = @(self.post.numberOfLikes.integerValue - 1);
         [self.likesLabel setNeedsDisplay];
     }

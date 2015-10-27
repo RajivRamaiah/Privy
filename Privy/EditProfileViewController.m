@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
 @property (weak, nonatomic) IBOutlet PFImageView *profilePhotoImageView;
 @property (nonatomic) UIImage *editedProfilePhoto;
+@property (nonatomic) BOOL didSelectNewProfileImage;
 
 @end
 
@@ -55,9 +56,11 @@
 
 - (IBAction)onDoneButtonPressed:(UIBarButtonItem *)sender {
 
-    NSData *imageData = UIImagePNGRepresentation(self.editedProfilePhoto);
-    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-    self.currentUser.profilePhoto = imageFile;
+    if (self.didSelectNewProfileImage == YES) {
+        NSData *imageData = UIImagePNGRepresentation(self.editedProfilePhoto);
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
+        self.currentUser.profilePhoto = imageFile;
+    }
 
     self.currentUser.fullname = self.fullnameTextField.text;
     self.currentUser.username = self.usernameTextField.text;
@@ -88,7 +91,8 @@
 
 #pragma mark UIImagePickerController Delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    
+
+    self.didSelectNewProfileImage = YES;
     UIImage *pickedImage = [info objectForKey:UIImagePickerControllerEditedImage];
     self.editedProfilePhoto = pickedImage;
     self.profilePhotoImageView.image = pickedImage;

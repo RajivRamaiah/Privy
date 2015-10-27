@@ -17,7 +17,7 @@
 
 - (void)awakeFromNib {
 
-    
+    self.userProfilePhotoImageView.layer.cornerRadius = 4;
 }
 
 - (void)loadCell {

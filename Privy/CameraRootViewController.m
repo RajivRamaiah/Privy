@@ -53,6 +53,8 @@
     newPost.createdBy = self.currentUser;
     newPost.username = self.currentUser.username;
     newPost.caption = self.captionTextField.text;
+    newPost.numberOfLikes = @0;
+    newPost.numberOfComments = @0;
 
     [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded){
