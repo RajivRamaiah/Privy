@@ -18,6 +18,7 @@
 		436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */; };
 		436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */; };
 		436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */; };
+		438A45C91BE0393200BFB674 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438A45C81BE0393200BFB674 /* CommentsViewController.m */; };
 		43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889521BDEFDA6004E1B6A /* ActivityViewController.m */; };
 		43D889581BDF0189004E1B6A /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889571BDF0189004E1B6A /* ActivityTableViewCell.m */; };
 		43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D8895A1BDF02F8004E1B6A /* Activity.m */; };
@@ -100,6 +101,8 @@
 		436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileOptionsViewController.m; sourceTree = "<group>"; };
 		436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		438A45C71BE0393200BFB674 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		438A45C81BE0393200BFB674 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		43D889511BDEFDA6004E1B6A /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		43D889521BDEFDA6004E1B6A /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		43D889561BDF0189004E1B6A /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				43596D001BDB148900E352B2 /* PostTableViewCell.m */,
 				436D2E171BDC996D0077EFA6 /* ProfilePostTableViewCell.h */,
 				436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */,
+				438A45C71BE0393200BFB674 /* CommentsViewController.h */,
+				438A45C81BE0393200BFB674 /* CommentsViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 				A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */,
 				43D889671BDF240C004E1B6A /* CameraRootViewController.m in Sources */,
 				A07C0E231BD9877F00BBAED2 /* main.m in Sources */,
+				438A45C91BE0393200BFB674 /* CommentsViewController.m in Sources */,
 				43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */,
 				436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */,
 				435439531BD9D3BB00B1E70B /* Comment.m in Sources */,

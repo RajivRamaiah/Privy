@@ -14,6 +14,7 @@
 #import "Comment.h"
 #import "PostTableViewCell.h"
 #import "PostHeaderTableViewCell.h"
+#import "CommentsViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, PostTableViewCellDelegate>
 
@@ -153,17 +154,17 @@
 }
 
 - (void)didTapCommentButton:(UIButton *)sender onCell:(PostTableViewCell *)cell {
-    // something
+    [self performSegueWithIdentifier:@"ShowCommentsSegue" sender:cell];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(PostTableViewCell *)sender {
+    CommentsViewController *destinationVC = segue.destinationViewController;
+    destinationVC.post = sender.post;
 }
-*/
+
 
 @end
