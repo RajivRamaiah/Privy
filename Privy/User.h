@@ -17,9 +17,12 @@
 @property (nonatomic) PFFile *coverPhoto;
 @property (nonatomic) NSString *bio;
 @property (nonatomic) NSString *gender;
+
 @property (nonatomic) PFRelation *likesRelation;
 @property (nonatomic) PFRelation *postsRelation;
 @property (nonatomic) PFRelation *friendsRelation;
+
+
 @property (nonatomic) NSNumber *numberOfPosts;
 @property (nonatomic) NSNumber *numberOfFriends;
 

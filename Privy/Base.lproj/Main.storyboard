@@ -706,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1W-cL-hri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4470" y="2978"/>
+            <point key="canvasLocation" x="4470" y="2820"/>
         </scene>
         <!--Profile Options View Controller-->
         <scene sceneID="F8l-VN-ODR">
@@ -757,6 +757,7 @@
                     <connections>
                         <segue destination="ekq-oa-c2P" kind="presentation" identifier="ShowLogin" id="tO0-YF-LNr"/>
                         <segue destination="DLI-vD-FVW" kind="presentation" identifier="ShowEditProfileSegue" id="By2-7F-Mez"/>
+                        <segue destination="D4e-vk-mLj" kind="presentation" identifier="ShowChangePasswordSegue" id="FaO-9A-ah9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGX-xr-2yJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -817,12 +818,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DLI-vD-FVW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pHj-A5-37C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="pHj-A5-37C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.78039215689999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -832,7 +836,58 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyp-CE-O7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681" y="2978"/>
+            <point key="canvasLocation" x="3681" y="2820"/>
+        </scene>
+        <!--Change Password-->
+        <scene sceneID="0ie-Cs-4Ls">
+            <objects>
+                <viewController id="UCn-UM-6IT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mn-NB-czx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Din-ZY-lAa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cVj-PD-0NI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBM-83-4a4">
+                                <rect key="frame" x="20" y="154" width="560" height="34"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="BFp-aU-Rx4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password, Again" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4q-7a-185">
+                                <rect key="frame" x="20" y="208" width="560" height="34"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="8OG-Tg-OOn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sBM-83-4a4" firstAttribute="leading" secondItem="cVj-PD-0NI" secondAttribute="leading" constant="20" id="42r-tA-lXc"/>
+                            <constraint firstItem="y4q-7a-185" firstAttribute="top" secondItem="sBM-83-4a4" secondAttribute="bottom" constant="20" id="4kx-aK-xtA"/>
+                            <constraint firstAttribute="trailing" secondItem="sBM-83-4a4" secondAttribute="trailing" constant="20" id="69C-BW-RzH"/>
+                            <constraint firstItem="y4q-7a-185" firstAttribute="leading" secondItem="cVj-PD-0NI" secondAttribute="leadingMargin" id="FjA-Yp-rDu"/>
+                            <constraint firstItem="sBM-83-4a4" firstAttribute="top" secondItem="7mn-NB-czx" secondAttribute="bottom" constant="90" id="eCO-In-KT2"/>
+                            <constraint firstItem="y4q-7a-185" firstAttribute="trailing" secondItem="cVj-PD-0NI" secondAttribute="trailingMargin" id="giA-Da-02u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Password" id="UKv-Z1-0Ks">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rhT-d8-mIO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lgB-0e-U5Z"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAV-Ic-vUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4470" y="3588"/>
         </scene>
         <!--Camera-->
         <scene sceneID="yUD-o6-OE1">
@@ -936,6 +991,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1N-Mf-7rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1526" y="1482"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="scB-5r-h4C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D4e-vk-mLj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="dv0-bL-Jbc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.78039215689999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UCn-UM-6IT" kind="relationship" relationship="rootViewController" id="wQa-sC-JpP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqm-IB-lAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3681" y="3588"/>
         </scene>
     </scenes>
     <resources>
