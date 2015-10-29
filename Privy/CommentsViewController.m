@@ -68,6 +68,7 @@
 
     if (editingStyle == UITableViewCellEditingStyleDelete) {
 
+        self.post.numberOfComments = @(self.post.numberOfComments.integerValue - 1);
         PFRelation *relation = [self.post relationForKey:@"commentsRelation"];
         [relation removeObject:comment];
         [self.post saveInBackground];
@@ -91,12 +92,15 @@
             comment.user = self.currentUser;
             comment.text = textField.text;
             [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+//                NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:self.comments.count + 1];
+//                [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
                 [self.comments addObject:comment];
                 [self.tableView reloadData];
                 if (succeeded){
                     NSLog(@"comment saved");
                 }
 
+                self.post.numberOfComments = @(self.post.numberOfComments.integerValue + 1);
                 PFRelation *relation = [self.post relationForKey:@"commentsRelation"];
                 [relation addObject:comment];
                 [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

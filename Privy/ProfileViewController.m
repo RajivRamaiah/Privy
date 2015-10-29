@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profilePhotoImageView;
 @property (weak, nonatomic) IBOutlet PFImageView *coverPhotoImageView;
+@property (weak, nonatomic) IBOutlet UIView *profilePhotoOutlineView;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfPostsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfFriendsLabel;
 
 @end
 
@@ -42,12 +45,16 @@
         if (!error) {
             // The find succeeded.
             self.posts = objects;
+            self.numberOfPostsLabel.text = [@(self.posts.count) stringValue];
             [self.tableView reloadData];
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+
+    self.profilePhotoOutlineView.layer.cornerRadius = 6;
+    self.profilePhotoImageView.layer.cornerRadius = 4;
 
     [PFImageView new];
 }
@@ -56,14 +63,13 @@
     [super viewWillAppear:YES];
 
     self.profilePhotoImageView.file = self.currentUser.profilePhoto;
-#warning Profile image won't update from Options screen if still uploading in background
     [self.profilePhotoImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
         self.profilePhotoImageView.image = image;
     }];
     self.coverPhotoImageView.file = self.currentUser.coverPhoto;
     [self.coverPhotoImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
         if (!image) {
-            self.coverPhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+//            self.coverPhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
         } else {
             self.coverPhotoImageView.image = image;
         }

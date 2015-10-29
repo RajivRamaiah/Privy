@@ -18,10 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.loginButton.layer.cornerRadius = 10;
-    self.signUpButton.layer.cornerRadius = 10;
     // Do any additional setup after loading the view.
+    self.loginButton.layer.borderWidth = 2;
+    self.loginButton.layer.borderColor = [[UIColor whiteColor] CGColor];
 }
 
 - (IBAction)onLoginPressed:(UIButton *)sender {

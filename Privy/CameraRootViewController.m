@@ -41,7 +41,7 @@
     }
 }
 -(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
 
 }
 
@@ -107,7 +107,7 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    PostPhotoViewController *ppvc = segue.destinationViewController;
 //    ppvc.image = self.pfImageView.image;
 //}
@@ -123,7 +123,7 @@
 //    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
 //    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
 //
-//    if ([self.session canAddInput:deviceInput]){
+//    if ([self.session canAddInput:deviceInput]) {
 //        [self.session addInput:deviceInput];
 //    }
 //
@@ -150,20 +150,20 @@
 //- (IBAction)onCaptureFramePressed:(UIButton *)sender {
 //
 //    AVCaptureConnection *videoConnection = nil;
-//    for (AVCaptureConnection *connection in self.stillImageOutput.connections){
-//        for (AVCaptureInputPort *port in [connection inputPorts]){
-//            if ([port.mediaType isEqual:AVMediaTypeVideo]){
+//    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
+//        for (AVCaptureInputPort *port in [connection inputPorts]) {
+//            if ([port.mediaType isEqual:AVMediaTypeVideo]) {
 //                videoConnection = connection;
 //                break;
 //            }
 //        }
 //
-//        if (videoConnection){
+//        if (videoConnection) {
 //            break;
 //        }
 //    }
 //    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-//        if (imageDataSampleBuffer != nil){
+//        if (imageDataSampleBuffer != nil) {
 //            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
 //            UIImage *image = [UIImage imageWithData:imageData];
 //            self.PFImageView.image = image;

@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profilePhotoImageView;
 @property (nonatomic) UIImage *editedProfilePhoto;
 @property (nonatomic) BOOL didSelectNewProfileImage;
+@property (weak, nonatomic) IBOutlet UIButton *editPhotoButton;
 
 @end
 
@@ -32,6 +33,9 @@
     [super viewDidLoad];
 
     self.currentUser = [User currentUser];
+
+    self.profilePhotoImageView.layer.cornerRadius = 4;
+    self.editPhotoButton.layer.cornerRadius = 4;
 
     [PFImageView new];
 
@@ -45,10 +49,6 @@
         self.profilePhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
     }
 }
-
-//+ (void)updateUserImageWithBlock:(void (^)(UIImage *image))complete {
-//
-//}
 
 - (IBAction)onCancelButtonPressed:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

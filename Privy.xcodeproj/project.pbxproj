@@ -18,7 +18,10 @@
 		436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */; };
 		436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */; };
 		436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */; };
+		4378D70B1BE18AD200C72557 /* EditCoverPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4378D70A1BE18AD200C72557 /* EditCoverPhotoViewController.m */; };
 		438A45C91BE0393200BFB674 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438A45C81BE0393200BFB674 /* CommentsViewController.m */; };
+		43CC7FB41BE06A4C001B6CB9 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC7FB31BE06A4C001B6CB9 /* ChangePasswordViewController.m */; };
+		43CC7FB71BE079E1001B6CB9 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC7FB61BE079E1001B6CB9 /* RoundedButton.m */; };
 		43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889521BDEFDA6004E1B6A /* ActivityViewController.m */; };
 		43D889581BDF0189004E1B6A /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889571BDF0189004E1B6A /* ActivityTableViewCell.m */; };
 		43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D8895A1BDF02F8004E1B6A /* Activity.m */; };
@@ -101,8 +104,14 @@
 		436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileOptionsViewController.m; sourceTree = "<group>"; };
 		436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		4378D7091BE18AD200C72557 /* EditCoverPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCoverPhotoViewController.h; sourceTree = "<group>"; };
+		4378D70A1BE18AD200C72557 /* EditCoverPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCoverPhotoViewController.m; sourceTree = "<group>"; };
 		438A45C71BE0393200BFB674 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
 		438A45C81BE0393200BFB674 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		43CC7FB21BE06A4C001B6CB9 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		43CC7FB31BE06A4C001B6CB9 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		43CC7FB51BE079E1001B6CB9 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
+		43CC7FB61BE079E1001B6CB9 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
 		43D889511BDEFDA6004E1B6A /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		43D889521BDEFDA6004E1B6A /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		43D889561BDF0189004E1B6A /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
@@ -231,6 +240,8 @@
 				43D8896A1BDF3018004E1B6A /* Activity.storyboard */,
 				43D889681BDF2FED004E1B6A /* Search.storyboard */,
 				A07C0E2F1BD9877F00BBAED2 /* LaunchScreen.storyboard */,
+				43CC7FB51BE079E1001B6CB9 /* RoundedButton.h */,
+				43CC7FB61BE079E1001B6CB9 /* RoundedButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -266,8 +277,6 @@
 				436D2E151BDC426E0077EFA6 /* ProfileViewController.m */,
 				436D2E1A1BDCA3630077EFA6 /* ProfileOptionsViewController.h */,
 				436D2E1B1BDCA3630077EFA6 /* ProfileOptionsViewController.m */,
-				436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */,
-				436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */,
 				43596CFC1BDB13F800E352B2 /* PostHeaderTableViewCell.h */,
 				43596CFD1BDB13F800E352B2 /* PostHeaderTableViewCell.m */,
 				43596CFF1BDB148900E352B2 /* PostTableViewCell.h */,
@@ -276,6 +285,12 @@
 				436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */,
 				438A45C71BE0393200BFB674 /* CommentsViewController.h */,
 				438A45C81BE0393200BFB674 /* CommentsViewController.m */,
+				436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */,
+				436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */,
+				4378D7091BE18AD200C72557 /* EditCoverPhotoViewController.h */,
+				4378D70A1BE18AD200C72557 /* EditCoverPhotoViewController.m */,
+				43CC7FB21BE06A4C001B6CB9 /* ChangePasswordViewController.h */,
+				43CC7FB31BE06A4C001B6CB9 /* ChangePasswordViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -535,6 +550,7 @@
 				A0F690651BDB394A00657D3C /* SplashLoginViewController.m in Sources */,
 				43596CFE1BDB13F800E352B2 /* PostHeaderTableViewCell.m in Sources */,
 				43D8895E1BDF1AC1004E1B6A /* SearchCollectionViewCell.m in Sources */,
+				43CC7FB41BE06A4C001B6CB9 /* ChangePasswordViewController.m in Sources */,
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
 				436D2E161BDC426E0077EFA6 /* ProfileViewController.m in Sources */,
 				A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */,
@@ -549,9 +565,11 @@
 				A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
 				43D889611BDF1AD1004E1B6A /* SearchViewController.m in Sources */,
+				4378D70B1BE18AD200C72557 /* EditCoverPhotoViewController.m in Sources */,
 				43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */,
 				436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */,
 				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
+				43CC7FB71BE079E1001B6CB9 /* RoundedButton.m in Sources */,
 				43D889581BDF0189004E1B6A /* ActivityTableViewCell.m in Sources */,
 				A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */,
 				436D2E191BDC996D0077EFA6 /* ProfilePostTableViewCell.m in Sources */,

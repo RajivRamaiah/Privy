@@ -15,14 +15,16 @@
 #import "PostTableViewCell.h"
 #import "PostHeaderTableViewCell.h"
 #import "CommentsViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, PostTableViewCellDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, PostTableViewCellDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) User *currentUser;
-@property (nonatomic) NSArray *posts;
+@property (nonatomic) NSMutableArray *posts;
 @property (nonatomic) NSMutableArray *likedPosts;
-@property UIRefreshControl *refreshControl;
+@property (nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic) MFMailComposeViewController *mc;
 
 
 @end
@@ -35,12 +37,15 @@
     self.currentUser = [User currentUser];
     [self loadRefreshControl];
 
+    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-logo"]];
+    self.navigationItem.titleView = logoImage;
+
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"createdBy"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            self.posts = objects;
+            self.posts = [objects mutableCopy];
             [self.tableView reloadData];
 
         } else {
@@ -115,7 +120,8 @@
     cell.post = post;
     cell.postImageView.file = post.image;
     [cell.postImageView loadInBackground];
-    cell.likesLabel.text = [NSString stringWithFormat:@"%@ Likes", [post.numberOfLikes stringValue]];
+    cell.likesLabel.text = [NSString stringWithFormat:@"%@", [post.numberOfLikes stringValue]];
+    cell.commentsLabel.text = [NSString stringWithFormat:@"%@", [post.numberOfComments stringValue]];
     cell.captionLabel.text = post.caption;
 
 
@@ -155,6 +161,84 @@
 
 - (void)didTapCommentButton:(UIButton *)sender onCell:(PostTableViewCell *)cell {
     [self performSegueWithIdentifier:@"ShowCommentsSegue" sender:cell];
+}
+
+- (void)didTapMoreButton:(UIButton *)sender onCell:(PostTableViewCell *)cell {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Actions" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *report = [UIAlertAction actionWithTitle:@"Report this post" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self emailTapped:cell];
+    }];
+
+    UIAlertAction *deletePost = [UIAlertAction actionWithTitle:@"Delete this post" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+
+        if ([self.likedPosts containsObject:cell.post]) {
+            [self.likedPosts removeObject:cell.post];
+            PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
+            [relation removeObject:cell.post];
+            [self.currentUser saveInBackground];
+        }
+
+        [self.posts removeObject:cell.post];
+
+        [cell.post deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [self.tableView reloadData];
+        }];
+    }];
+
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        // do something
+    }];
+    [alert addAction:report];
+    if (cell.post.createdBy == self.currentUser) {
+        [alert addAction:deletePost];
+    }
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)emailTapped:(PostTableViewCell *)cell {
+    // Email Subject
+    NSString *emailTitle = @"Offensive Post Report";
+    // Email Content
+    NSString *messageBody = [NSString stringWithFormat:@"Post ID: %@", cell.post.objectId];
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"kellenpierson@gmail.com"];
+
+    self.mc = [[MFMailComposeViewController alloc] init];
+
+    self.mc.mailComposeDelegate = self;
+    [self.mc setSubject:emailTitle];
+    [self.mc setMessageBody:messageBody isHTML:NO];
+    [self.mc setToRecipients:toRecipents];
+
+
+    // Present mail view controller on screen
+    [self presentViewController:self.mc animated:YES completion:^{
+
+    }];
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+
+    // Close the Mail Interface
+    [self.mc dismissViewControllerAnimated:YES completion:NULL];
 }
 
 

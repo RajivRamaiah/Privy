@@ -155,11 +155,13 @@
             </objects>
             <point key="canvasLocation" x="3053" y="-624"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="eet-o1-gGE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="77C-4D-tPj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="B9F-06-bJ0"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search-tab-icon" id="B9F-06-bJ0">
+                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="-1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="add-E0-DdJ">
@@ -179,5 +181,6 @@
     </scenes>
     <resources>
         <image name="profile-image-ph" width="250" height="250"/>
+        <image name="search-tab-icon" width="30" height="26"/>
     </resources>
 </document>

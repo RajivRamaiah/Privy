@@ -18,6 +18,7 @@
 
 - (void)didTapLikeButton:(UIButton *)sender onCell:(PostTableViewCell *)cell;
 - (void)didTapCommentButton:(UIButton *)sender onCell:(PostTableViewCell *)cell;
+- (void)didTapMoreButton:(UIButton *)sender onCell:(PostTableViewCell *)cell;
 
 @end
 
@@ -31,5 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UIImageView *heartImageView;
 
 @end

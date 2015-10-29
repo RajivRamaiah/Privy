@@ -100,7 +100,9 @@
         <scene sceneID="nXI-tD-MKs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dhS-lB-1vG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" id="UnX-DK-ZOc"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="heart-tab-icon" id="UnX-DK-ZOc">
+                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="-1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AWt-ET-P7x">
@@ -119,6 +121,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart-tab-icon" width="31" height="26"/>
         <image name="profile-image-ph" width="250" height="250"/>
     </resources>
 </document>

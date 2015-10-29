@@ -16,6 +16,7 @@
 @property (nonatomic) User *currentUser;
 @property (nonatomic) NSArray *sectionOneOptions;
 @property (nonatomic) NSArray *sectionTwoOptions;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -24,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.sectionOneOptions = @[@"Edit Profile", @"Change Password", @"Posts you've liked"];
+    self.sectionOneOptions = @[@"Edit Profile", @"Edit Cover Photo", @"Change Password", @"Posts you've liked"];
     self.sectionTwoOptions = @[@"Log Out"];
 
     self.title = @"Options";
@@ -84,14 +85,30 @@
         if (indexPath.row == 0) {
             [self performSegueWithIdentifier:@"ShowEditProfileSegue" sender:self];
         } else if (indexPath.row == 1) {
-            // --> Change Password Page
+            [self performSegueWithIdentifier:@"ShowEditCoverPhotoSegue" sender:self];
         } else if (indexPath.row == 2) {
+            [self performSegueWithIdentifier:@"ShowChangePasswordSegue" sender:self];
+        } else if (indexPath.row == 3) {
             // --> Posts you've Liked ??
         }
     } else if (indexPath.section == 1) {
-        [User logOut];
-        [self performSegueWithIdentifier:@"ShowLogin" sender:self];
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Log out?" message:@"Are you sure you want to log out?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *logOut = [UIAlertAction actionWithTitle:@"Log Out" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [User logOut];
+            [self performSegueWithIdentifier:@"ShowLogin" sender:self];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            // Do something
+        }];
+
+        [alert addAction:logOut];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+
     }
+
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
