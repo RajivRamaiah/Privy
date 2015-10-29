@@ -313,7 +313,7 @@
                                         <rect key="frame" x="0.0" y="390" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tgf-YB-d8m" id="OKj-vR-bC3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HTl-sp-rrn">
@@ -350,7 +350,7 @@
                                         <rect key="frame" x="0.0" y="440" width="600" height="565"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ce0-JO-UoN" id="9jy-vU-T3w">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="565"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="564.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbb-dV-98R">
@@ -475,11 +475,11 @@
             </objects>
             <point key="canvasLocation" x="3053" y="353"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="eet-o1-gGE">
             <objects>
                 <navigationController storyboardIdentifier="Search" automaticallyAdjustsScrollViewInsets="NO" id="77C-4D-tPj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="B9F-06-bJ0"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search-tab-icon" id="B9F-06-bJ0"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="add-E0-DdJ">
