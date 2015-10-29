@@ -27,7 +27,7 @@
 		43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D8895A1BDF02F8004E1B6A /* Activity.m */; };
 		43D8895E1BDF1AC1004E1B6A /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D8895D1BDF1AC1004E1B6A /* SearchCollectionViewCell.m */; };
 		43D889611BDF1AD1004E1B6A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889601BDF1AD1004E1B6A /* SearchViewController.m */; };
-		43D889641BDF1D31004E1B6A /* SearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889631BDF1D31004E1B6A /* SearchProfileViewController.m */; };
+		43D889641BDF1D31004E1B6A /* SearchFriendProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889631BDF1D31004E1B6A /* SearchFriendProfileViewController.m */; };
 		43D889671BDF240C004E1B6A /* CameraRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889661BDF240C004E1B6A /* CameraRootViewController.m */; };
 		43D889691BDF2FED004E1B6A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D889681BDF2FED004E1B6A /* Search.storyboard */; };
 		43D8896C1BDF3018004E1B6A /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D8896A1BDF3018004E1B6A /* Activity.storyboard */; };
@@ -62,6 +62,9 @@
 		A0F690671BDB3E0A00657D3C /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F690661BDB3E0A00657D3C /* Login.xcassets */; };
 		A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F690691BDB49FD00657D3C /* LoginViewController.m */; };
 		A0F6906D1BDB4A0300657D3C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */; };
+		A0FCFC181BE0725200EF9A33 /* SearchNonFriendProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FCFC171BE0725200EF9A33 /* SearchNonFriendProfileViewController.m */; };
+		A0FCFC1B1BE12F1400EF9A33 /* SearchFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FCFC1A1BE12F1400EF9A33 /* SearchFriendTableViewCell.m */; };
+		A0FCFC1E1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FCFC1D1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,8 +125,8 @@
 		43D8895D1BDF1AC1004E1B6A /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
 		43D8895F1BDF1AD1004E1B6A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		43D889601BDF1AD1004E1B6A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		43D889621BDF1D31004E1B6A /* SearchProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchProfileViewController.h; sourceTree = "<group>"; };
-		43D889631BDF1D31004E1B6A /* SearchProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchProfileViewController.m; sourceTree = "<group>"; };
+		43D889621BDF1D31004E1B6A /* SearchFriendProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendProfileViewController.h; sourceTree = "<group>"; };
+		43D889631BDF1D31004E1B6A /* SearchFriendProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendProfileViewController.m; sourceTree = "<group>"; };
 		43D889651BDF240C004E1B6A /* CameraRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraRootViewController.h; sourceTree = "<group>"; };
 		43D889661BDF240C004E1B6A /* CameraRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraRootViewController.m; sourceTree = "<group>"; };
 		43D889681BDF2FED004E1B6A /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -169,6 +172,12 @@
 		A0F690691BDB49FD00657D3C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A0F6906B1BDB4A0300657D3C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		A0F6906C1BDB4A0300657D3C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		A0FCFC161BE0725200EF9A33 /* SearchNonFriendProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNonFriendProfileViewController.h; sourceTree = "<group>"; };
+		A0FCFC171BE0725200EF9A33 /* SearchNonFriendProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNonFriendProfileViewController.m; sourceTree = "<group>"; };
+		A0FCFC191BE12F1400EF9A33 /* SearchFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendTableViewCell.h; sourceTree = "<group>"; };
+		A0FCFC1A1BE12F1400EF9A33 /* SearchFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendTableViewCell.m; sourceTree = "<group>"; };
+		A0FCFC1C1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNonFriendTableViewCell.h; sourceTree = "<group>"; };
+		A0FCFC1D1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNonFriendTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +322,14 @@
 				43D889601BDF1AD1004E1B6A /* SearchViewController.m */,
 				43D8895C1BDF1AC1004E1B6A /* SearchCollectionViewCell.h */,
 				43D8895D1BDF1AC1004E1B6A /* SearchCollectionViewCell.m */,
-				43D889621BDF1D31004E1B6A /* SearchProfileViewController.h */,
-				43D889631BDF1D31004E1B6A /* SearchProfileViewController.m */,
+				43D889621BDF1D31004E1B6A /* SearchFriendProfileViewController.h */,
+				43D889631BDF1D31004E1B6A /* SearchFriendProfileViewController.m */,
+				A0FCFC161BE0725200EF9A33 /* SearchNonFriendProfileViewController.h */,
+				A0FCFC171BE0725200EF9A33 /* SearchNonFriendProfileViewController.m */,
+				A0FCFC191BE12F1400EF9A33 /* SearchFriendTableViewCell.h */,
+				A0FCFC1A1BE12F1400EF9A33 /* SearchFriendTableViewCell.m */,
+				A0FCFC1C1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.h */,
+				A0FCFC1D1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -479,7 +494,7 @@
 				TargetAttributes = {
 					A07C0E1D1BD9877F00BBAED2 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 56GXWU92VJ;
+						DevelopmentTeam = M3Q3EV9NXA;
 					};
 					A07C0E361BD9877F00BBAED2 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -557,10 +572,12 @@
 				43D889671BDF240C004E1B6A /* CameraRootViewController.m in Sources */,
 				A07C0E231BD9877F00BBAED2 /* main.m in Sources */,
 				438A45C91BE0393200BFB674 /* CommentsViewController.m in Sources */,
+				A0FCFC1B1BE12F1400EF9A33 /* SearchFriendTableViewCell.m in Sources */,
 				43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */,
+				A0FCFC181BE0725200EF9A33 /* SearchNonFriendProfileViewController.m in Sources */,
 				436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */,
 				435439531BD9D3BB00B1E70B /* Comment.m in Sources */,
-				43D889641BDF1D31004E1B6A /* SearchProfileViewController.m in Sources */,
+				43D889641BDF1D31004E1B6A /* SearchFriendProfileViewController.m in Sources */,
 				435439561BD9D5B200B1E70B /* Like.m in Sources */,
 				A0F6906A1BDB49FD00657D3C /* LoginViewController.m in Sources */,
 				4354394F1BD9D14B00B1E70B /* Post.m in Sources */,
@@ -568,6 +585,7 @@
 				4378D70B1BE18AD200C72557 /* EditCoverPhotoViewController.m in Sources */,
 				43D8895B1BDF02F8004E1B6A /* Activity.m in Sources */,
 				436D2E1C1BDCA3630077EFA6 /* ProfileOptionsViewController.m in Sources */,
+				A0FCFC1E1BE12F6A00EF9A33 /* SearchNonFriendTableViewCell.m in Sources */,
 				43596CFB1BDB133600E352B2 /* HomeViewController.m in Sources */,
 				43CC7FB71BE079E1001B6CB9 /* RoundedButton.m in Sources */,
 				43D889581BDF0189004E1B6A /* ActivityTableViewCell.m in Sources */,

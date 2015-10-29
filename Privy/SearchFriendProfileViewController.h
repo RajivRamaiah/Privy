@@ -1,5 +1,5 @@
 //
-//  SearchProfileViewController.h
+//  SearchFriendProfileViewController.h
 //  Privy
 //
 //  Created by Kellen Pierson on 10/26/15.
@@ -10,7 +10,7 @@
 
 @class User;
 
-@interface SearchProfileViewController : UIViewController
+@interface SearchFriendProfileViewController : UIViewController
 
 @property (nonatomic) User *user;
 

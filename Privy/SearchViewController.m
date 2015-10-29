@@ -8,7 +8,8 @@
 
 #import "SearchViewController.h"
 #import "SearchCollectionViewCell.h"
-#import "SearchProfileViewController.h"
+#import "SearchFriendProfileViewController.h"
+#import "SearchNonFriendProfileViewController.h"
 #import "User.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
@@ -20,8 +21,10 @@
 @property NSArray *filteredSearchResults;
 @property NSArray *users;
 @property NSArray *images;
-@property NSIndexPath *indexPath;
 @property UIRefreshControl *refreshControl;
+@property User *currentUser;
+
+@property SearchCollectionViewCell *selectedCell;
 
 @end
 
@@ -29,10 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.currentUser = [User currentUser];
     self.users = [NSArray new];
     self.searchConducted = NO;
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.tintColor = [UIColor grayColor];
+    self.refreshControl.tintColor = [UIColor blueColor];
     [self.refreshControl addTarget:self action:@selector(refreshControlAction) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
@@ -115,14 +119,38 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    self.indexPath = indexPath;
+
+    SearchCollectionViewCell *cell = (SearchCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    self.selectedCell = cell;
+
+    PFRelation *friendsRelation = [self.currentUser friendsRelation];
+    PFQuery *query = [friendsRelation query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSArray *friends = objects;
+        if ([friends containsObject:cell.user]){
+            [self performSegueWithIdentifier:@"Friend" sender:[self.collectionView cellForItemAtIndexPath:indexPath]];
+        }
+        else{
+            [self performSegueWithIdentifier:@"NonFriend" sender:[self.collectionView cellForItemAtIndexPath:indexPath]];
+        }
+    }];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    SearchProfileViewController *spvc = segue.destinationViewController;
-    spvc.user = [self.users objectAtIndex:self.indexPath.row];
-    
+    if ([segue.identifier isEqualToString:@"NonFriend"]){
+        SearchNonFriendProfileViewController *snfpvc = segue.destinationViewController;
+        snfpvc.user = self.selectedCell.user;
+    }
+    else if ([segue.identifier isEqualToString:@"Friend"]){
+        SearchFriendProfileViewController *sfpvc = segue.destinationViewController;
+        sfpvc.user = self.selectedCell.user;
+    }
 }
--(IBAction)back:(UIStoryboardSegue *)sender{
+-(IBAction)backFromNonFriend:(UIStoryboardSegue *)sender{
+
+
+}
+
+-(IBAction)backFromFriend:(UIStoryboardSegue *)sender{
 
 }
 

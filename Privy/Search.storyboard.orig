@@ -475,11 +475,18 @@
             </objects>
             <point key="canvasLocation" x="3053" y="353"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="eet-o1-gGE">
             <objects>
+<<<<<<< HEAD
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="77C-4D-tPj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="search-tab-icon" id="B9F-06-bJ0">
+                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="-1"/>
+                    </tabBarItem>
+=======
                 <navigationController storyboardIdentifier="Search" automaticallyAdjustsScrollViewInsets="NO" id="77C-4D-tPj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="B9F-06-bJ0"/>
+>>>>>>> friends
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="add-E0-DdJ">
