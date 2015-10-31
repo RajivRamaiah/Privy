@@ -14,7 +14,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
-@interface SearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate, UIScrollViewDelegate>
+@interface SearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property BOOL searchConducted;
@@ -40,8 +40,13 @@
     [self.refreshControl addTarget:self action:@selector(refreshControlAction) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
+    self.title = @"Search Users";
+}
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
 
+//    self.collectionView.estimate
 }
 
 -(void) refreshControlAction{
@@ -145,6 +150,8 @@
         sfpvc.user = self.selectedCell.user;
     }
 }
+
+
 -(IBAction)backFromNonFriend:(UIStoryboardSegue *)sender{
 
 

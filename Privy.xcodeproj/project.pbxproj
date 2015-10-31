@@ -20,6 +20,7 @@
 		436D2E211BDCB62F0077EFA6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */; };
 		4378D70B1BE18AD200C72557 /* EditCoverPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4378D70A1BE18AD200C72557 /* EditCoverPhotoViewController.m */; };
 		438A45C91BE0393200BFB674 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438A45C81BE0393200BFB674 /* CommentsViewController.m */; };
+		43BE08221BE3325600D4C87C /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE08211BE3325600D4C87C /* CommentTableViewCell.m */; };
 		43CC7FB41BE06A4C001B6CB9 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC7FB31BE06A4C001B6CB9 /* ChangePasswordViewController.m */; };
 		43CC7FB71BE079E1001B6CB9 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC7FB61BE079E1001B6CB9 /* RoundedButton.m */; };
 		43D889531BDEFDA6004E1B6A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D889521BDEFDA6004E1B6A /* ActivityViewController.m */; };
@@ -111,6 +112,8 @@
 		4378D70A1BE18AD200C72557 /* EditCoverPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCoverPhotoViewController.m; sourceTree = "<group>"; };
 		438A45C71BE0393200BFB674 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
 		438A45C81BE0393200BFB674 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		43BE08201BE3325600D4C87C /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		43BE08211BE3325600D4C87C /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		43CC7FB21BE06A4C001B6CB9 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		43CC7FB31BE06A4C001B6CB9 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		43CC7FB51BE079E1001B6CB9 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				436D2E181BDC996D0077EFA6 /* ProfilePostTableViewCell.m */,
 				438A45C71BE0393200BFB674 /* CommentsViewController.h */,
 				438A45C81BE0393200BFB674 /* CommentsViewController.m */,
+				43BE08201BE3325600D4C87C /* CommentTableViewCell.h */,
+				43BE08211BE3325600D4C87C /* CommentTableViewCell.m */,
 				436D2E1F1BDCB62F0077EFA6 /* EditProfileViewController.h */,
 				436D2E201BDCB62F0077EFA6 /* EditProfileViewController.m */,
 				4378D7091BE18AD200C72557 /* EditCoverPhotoViewController.h */,
@@ -569,6 +574,7 @@
 				435439591BD9D8BA00B1E70B /* User.m in Sources */,
 				436D2E161BDC426E0077EFA6 /* ProfileViewController.m in Sources */,
 				A07C0E261BD9877F00BBAED2 /* AppDelegate.m in Sources */,
+				43BE08221BE3325600D4C87C /* CommentTableViewCell.m in Sources */,
 				43D889671BDF240C004E1B6A /* CameraRootViewController.m in Sources */,
 				A07C0E231BD9877F00BBAED2 /* main.m in Sources */,
 				438A45C91BE0393200BFB674 /* CommentsViewController.m in Sources */,

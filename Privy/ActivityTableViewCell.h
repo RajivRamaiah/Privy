@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet PFImageView *fromUserImageView;
 @property (weak, nonatomic) IBOutlet PFImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

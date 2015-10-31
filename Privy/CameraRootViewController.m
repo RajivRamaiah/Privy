@@ -13,14 +13,16 @@
 #import "User.h"
 //#import <AVFoundation/AVFoundation.h>
 
-@interface CameraRootViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CameraRootViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 
 //@property AVCaptureSession *session;
 //@property AVCaptureStillImageOutput *stillImageOutput;
 
 @property (nonatomic) User *currentUser;
-@property (weak, nonatomic) IBOutlet UITextField *captionTextField;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextField;
 @property (weak, nonatomic) IBOutlet PFImageView *pfImageView;
+@property (weak, nonatomic) IBOutlet UIButton *sharePostButton;
+
 @end
 
 @implementation CameraRootViewController
@@ -29,6 +31,16 @@
     [super viewDidLoad];
 
     self.currentUser = [User currentUser];
+
+    self.sharePostButton.enabled = NO;
+    self.sharePostButton.alpha = 0.3;
+
+    self.pfImageView.layer.cornerRadius = 4;
+    self.captionTextField.delegate = self;
+    self.captionTextField.text = @"Add a caption";
+    self.captionTextField.textColor = [UIColor lightGrayColor];
+
+
 
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 
@@ -39,10 +51,19 @@
 //        }];;
 
     }
+
+    self.title = @"New Post";
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 -(void)viewWillAppear:(BOOL)animated{
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];
 
+}
+
+- (void)dismissKeyboard:(id)sender {
+    [self.view endEditing:YES];
 }
 
 - (IBAction)onSharePhotoPressed:(UIButton *)sender {
@@ -99,12 +120,33 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.pfImageView.image = chosenImage;
 
+    self.sharePostButton.enabled = YES;
+    self.sharePostButton.alpha = 1.0;
+
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"Add a caption"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Add a caption";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

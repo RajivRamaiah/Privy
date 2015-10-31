@@ -9,15 +9,18 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "CommentsViewController.h"
+#import "CommentTableViewCell.h"
 #import "User.h"
 #import "Post.h"
 #import "Comment.h"
+#import "Activity.h"
 
 @interface CommentsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) User *currentUser;
 @property (nonatomic) NSMutableArray *comments;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addCommentButton;
 
 @end
 
@@ -30,10 +33,12 @@
 
     PFRelation *relation = [self.post relationForKey:@"commentsRelation"];
     PFQuery *query = [relation query];
+    [query orderByAscending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.comments = [objects mutableCopy];
         [self.tableView reloadData];
     }];
+
 
     self.tableView.estimatedRowHeight = 60.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -47,10 +52,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell"];
+    CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell"];
     Comment *comment = self.comments[indexPath.row];
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", comment.user.username, comment.text];
+    [comment fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        cell.userImageView.file = comment.user.profilePhoto;
+        [cell.userImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+            if (image != nil) {
+                cell.userImageView.image = image;
+            } else {
+                cell.userImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+            }
+        }];
+        cell.usernameLabel.text = comment.user.username;
+        cell.contentLabel.text = comment.text;
+        cell.timeLabel.text = [self formatTimeStampForActivity:comment];
+    }];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", comment.user.username, comment.text];
+
 
     return cell;
 }
@@ -108,6 +127,16 @@
                         NSLog(@"post saved");
                     }
                 }];
+
+                Activity *activity = [Activity object];
+                activity.fromUser = self.currentUser;
+                activity.toUser = self.post.createdBy;
+                activity.post = self.post;
+                activity.type = @1;
+                [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    // Send a push notification
+                    NSLog(@"Comment Activity Saved");
+                }];
             }];
         }
     }];
@@ -118,6 +147,28 @@
     [alert addAction:post];
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (NSString *)formatTimeStampForActivity:(Comment *)comment {
+
+    NSString *timeStamp;
+    NSCalendar *c = [NSCalendar currentCalendar];
+    NSDate *d1 = [NSDate date];
+    NSDate *d2 = comment.createdAt;
+
+    NSDateComponents *components = [c components:NSCalendarUnitHour fromDate:d2 toDate:d1 options:0];
+    NSInteger diff = components.hour;
+
+
+    if (diff < 1) {
+        NSDateComponents *components = [c components:NSCalendarUnitMinute fromDate:d2 toDate:d1 options:0];
+        NSInteger diff = components.minute;
+        timeStamp = [NSString stringWithFormat:@"%lum", diff];
+    } else {
+        timeStamp = [NSString stringWithFormat:@"%luh", diff];
+    }
+
+    return timeStamp;
 }
 
 /*

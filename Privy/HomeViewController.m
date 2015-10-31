@@ -12,6 +12,7 @@
 #import "Post.h"
 #import "Like.h"
 #import "Comment.h"
+#import "Activity.h"
 #import "PostTableViewCell.h"
 #import "PostHeaderTableViewCell.h"
 #import "CommentsViewController.h"
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) User *currentUser;
 @property (nonatomic) NSMutableArray *posts;
+@property (nonatomic) NSMutableArray *friends;
 @property (nonatomic) NSMutableArray *likedPosts;
 @property (nonatomic) UIRefreshControl *refreshControl;
 @property (nonatomic) MFMailComposeViewController *mc;
@@ -36,23 +38,41 @@
 
     self.currentUser = [User currentUser];
     [self loadRefreshControl];
+    self.friends = [NSMutableArray new];
+    self.posts = [NSMutableArray new];
 
     UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-logo"]];
     self.navigationItem.titleView = logoImage;
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query orderByDescending:@"createdAt"];
-    [query includeKey:@"createdBy"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            self.posts = [objects mutableCopy];
-            [self.tableView reloadData];
+    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    PFQuery *friendsQuery = [friendsRelation query];
+    [friendsQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable friends, NSError * _Nullable error) {
+        self.friends = [friends mutableCopy];
+        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+        [query orderByDescending:@"createdAt"];
+        [query includeKey:@"createdBy"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+            if (!error) {
+//                self.posts = [objects mutableCopy];
+                for (Post *post in posts) {
+                    if (self.currentUser.objectId == post.createdBy.objectId) {
+                        [self.posts addObject:post];
+                    }
 
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
+                    if ([self.friends containsObject:post.createdBy]) {
+                        [self.posts addObject:post];
+                    }
+                }
+                //            self.posts = [objects mutableCopy];
+                [self.tableView reloadData];
+
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     }];
+
 
     PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
     PFQuery *likeQuery = [relation query];
@@ -80,17 +100,43 @@
 
 - (void)refreshControlAction {
     [self.refreshControl beginRefreshing];
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query orderByDescending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            self.posts = objects;
-            [self.tableView reloadData];
 
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
+    self.posts = [NSMutableArray new];
+    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    PFQuery *friendsQuery = [friendsRelation query];
+    [friendsQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable friends, NSError * _Nullable error) {
+        self.friends = [friends mutableCopy];
+        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+        [query orderByDescending:@"createdAt"];
+        [query includeKey:@"createdBy"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+            if (!error) {
+                //                self.posts = [objects mutableCopy];
+                for (Post *post in posts) {
+                    if (self.currentUser.objectId == post.createdBy.objectId) {
+                        [self.posts addObject:post];
+                    }
+
+                    if ([self.friends containsObject:post.createdBy]) {
+                        [self.posts addObject:post];
+                    }
+                }
+                //            self.posts = [objects mutableCopy];
+                [self.tableView reloadData];
+
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }        }];
     }];
+
+    PFRelation *relation = [self.currentUser relationForKey:@"likesRelation"];
+    PFQuery *likeQuery = [relation query];
+    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.likedPosts = [objects mutableCopy];
+        [self.tableView reloadData];
+    }];
+
     [self.refreshControl endRefreshing];
 }
 
@@ -135,10 +181,14 @@
 
 //    cell.user = post.createdBy;
     cell.userProfilePhotoImageView.file = post.createdBy.profilePhoto;
-    [cell.userProfilePhotoImageView loadInBackground];
+    [cell.userProfilePhotoImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        if (!image) {
+            cell.userProfilePhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+        } else {
+            cell.userProfilePhotoImageView.image = image;
+        }
+    }];
     cell.usernameLabel.text = post.createdBy.username;
-#warning Completion handler needed to load profile images
-//    [cell loadCell];
 
     return cell;
 }
@@ -156,6 +206,15 @@
         [self.likedPosts removeObject:cell.post];
     } else {
         [self.likedPosts addObject:cell.post];
+        Activity *activity = [Activity object];
+        activity.fromUser = self.currentUser;
+        activity.toUser = cell.post.createdBy;
+        activity.post = cell.post;
+        activity.type = @0;
+        [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            // Send a push notification
+            NSLog(@"Like Activity Saved");
+        }];
     }
 }
 
@@ -188,13 +247,17 @@
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         // do something
     }];
-    [alert addAction:report];
+
     if (cell.post.createdBy == self.currentUser) {
         [alert addAction:deletePost];
+    } else {
+        [alert addAction:report];
     }
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+#pragma mark - Post Report Email Handling Methods
 
 - (void)emailTapped:(PostTableViewCell *)cell {
     // Email Subject

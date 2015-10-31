@@ -32,24 +32,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)onBackButtonPressed:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 
-}
 - (IBAction)onSignUpButtonPressed:(UIButton *)sender {
 
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *email = self.emailTextField.text;
 
-    if (username.length < 4 || password.length < 6 || email.length < 8){
+    if (username.length < 4 || password.length < 6 || email.length < 8) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Insufficient Username, Password, or Email length." message:@"Please make sure your username is over 4 characters, your password is over 6 characters, and your email is valid!" preferredStyle:UIAlertControllerStyleAlert];
 
-        [self presentViewController:alert animated:YES completion:^{
-
+        UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // do something
         }];
-    }
-    else{
+
+        [alert addAction:okay];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    } else {
         User *newUser = [User new];
 
         newUser.username = username;
@@ -58,9 +58,15 @@
 
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (error) {
-                NSLog(@"%@", error.description);
-            }
-            else{
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    // do something
+                }];
+
+                [alert addAction:okay];
+                [self presentViewController:alert animated:YES completion:nil];
+
+            } else {
                 NSLog(@"Success");
                 self.delegate.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
                 UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

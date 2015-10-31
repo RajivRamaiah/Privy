@@ -22,12 +22,22 @@
 
 - (void)loadCell {
 
-    if (!self.userProfilePhotoImageView.file) {
-        self.userProfilePhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
-    } else {
-        self.userProfilePhotoImageView.file = self.user.profilePhoto;
-        [self.userProfilePhotoImageView loadInBackground];
-    }
+//    if (!self.userProfilePhotoImageView.file) {
+//        self.userProfilePhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+//    } else {
+//        self.userProfilePhotoImageView.file = self.user.profilePhoto;
+//        [self.userProfilePhotoImageView loadInBackground];
+//    }
+
+    self.userProfilePhotoImageView.file = self.user.profilePhoto;
+    [self.userProfilePhotoImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        if (image != nil) {
+            self.userProfilePhotoImageView.image = [UIImage imageNamed:@"profile-image-ph"];
+        } else {
+            self.userProfilePhotoImageView.image = image;
+        }
+    }];
+
     self.usernameLabel.text = self.user.username;
 
 }

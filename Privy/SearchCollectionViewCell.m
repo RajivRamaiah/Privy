@@ -13,6 +13,11 @@
 
 @implementation SearchCollectionViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+}
+
 - (void)loadCell {
 
     self.pfImageView.file = self.user.profilePhoto;

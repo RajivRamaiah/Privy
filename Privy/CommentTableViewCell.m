@@ -1,19 +1,18 @@
 //
-//  ActivityTableViewCell.m
+//  CommentTableViewCell.m
 //  Privy
 //
-//  Created by Kellen Pierson on 10/26/15.
+//  Created by Kellen Pierson on 10/29/15.
 //  Copyright © 2015 Rajiv Ramaiah Applications. All rights reserved.
 //
 
-#import "ActivityTableViewCell.h"
+#import "CommentTableViewCell.h"
 
-@implementation ActivityTableViewCell
+@implementation CommentTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    self.fromUserImageView.layer.cornerRadius = 4;
-    self.postImageView.layer.cornerRadius = 4;
+    self.userImageView.layer.cornerRadius = 4;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

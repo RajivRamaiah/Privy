@@ -38,14 +38,15 @@
     [self.passwordTextField resignFirstResponder];
 
     if (username.length < 4 || password.length < 4){
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Insufficient Username or Password length." message:@"Please make sure your username is over 4 characters and your password is over six characters!" preferredStyle:UIAlertControllerStyleAlert];
-//
-//        [self presentViewController:alert animated:YES completion:^{
-//
-//        }];
-    }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Insufficient Username or Password length." message:@"Please make sure your username is over 4 characters and your password is over six characters!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // do something
+        }];
 
-    else{
+        [alert addAction:okay];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    } else {
         [User logInWithUsernameInBackground:username password:password block:^(PFUser * _Nullable user, NSError * _Nullable error) {
 
             if(user != nil){
@@ -56,12 +57,17 @@
                 [self.delegate.window setRootViewController:vc];
                 [self.delegate.window makeKeyAndVisible];
             }
-            else
-                NSLog(@"Login Failed");
+            else {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    // do something
+                }];
 
+                [alert addAction:okay];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }];
     }
-
 }
 
 
